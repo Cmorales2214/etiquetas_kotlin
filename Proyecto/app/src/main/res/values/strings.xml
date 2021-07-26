@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">Proyecto</string>
+
+    <!--  Login -->
+
+    <string name="ID">ID:</string>
+    <string name="ID_hint">Enter your ID</string>
+    <string name="Password">Password:</string>
+    <string name="Password_hint">Enter your password</string>
+
+    <!--  Botones -->
+
+    <string name="btn_register">Register</string>
+    <string name="btn_login">Login</string>
 </resources>
