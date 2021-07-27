@@ -1,5 +1,12 @@
 <resources>
     <string name="app_name">Proyecto</string>
+    <string name="title_activity_principal">ActivityPrincipal</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
 
     <!--  Login -->
 
@@ -8,8 +15,24 @@
     <string name="Password">Password:</string>
     <string name="Password_hint">Enter your password</string>
 
+    <!--  Contacto -->
+
+    <string name="Contacto">Contacts:</string>
+    <string name="Contacto_send_mail">Send email </string>
+    <string name="Contacto_no_app">No apps where founded to send email </string>
+
+
     <!--  Botones -->
 
     <string name="btn_register">Register</string>
     <string name="btn_login">Login</string>
+    <string name="btn_call">Call</string>
+    <string name="btn_send">Send email</string>
+
+
+    <!--  MENU -->
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_contactos">Contacts</string>
 </resources>
