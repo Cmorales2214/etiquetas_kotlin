@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         SolicitarPermisos()
-
+        btn_Registrar = findViewById(R.id.btn_Registrar)
         //Se le da la funcionalidad del boton de navegar a Registrar usuario
         btn_Registrar.setOnClickListener {
             val intent: Intent = Intent( this, RegistrarUsuario::class.java)
