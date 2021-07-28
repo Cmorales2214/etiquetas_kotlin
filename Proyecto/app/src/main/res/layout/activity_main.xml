@@ -19,14 +19,14 @@
         android:id="@+id/txt_idUsuario"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Numero de carnet:"
+        android:text="@string/ID"
         android:textSize="25sp"/>
 
     <EditText
         android:id="@+id/edt_correo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Digite su id"
+        android:hint="@string/ID_hint"
         android:inputType="textEmailAddress"
         android:textSize="25sp"/>
 
@@ -34,14 +34,14 @@
         android:id="@+id/txt_contrasena"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Contraseña:"
+        android:text="@string/Password"
         android:textSize="25sp"/>
 
     <EditText
         android:id="@+id/edt_contrasena"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Digite su contraseña"
+        android:hint="@string/Password_hint"
         android:inputType="textPassword"
         android:textSize="25sp"/>
 
@@ -56,14 +56,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="25sp"
-            android:text="Registrar"/>
+            android:text="@string/btn_register"/>
 
         <Button
             android:id="@+id/btn_Iniciar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="25sp"
-            android:text="Iniciar"
+            android:text="@string/btn_login"
             android:layout_marginStart="20dp" />
 
     </LinearLayout>
