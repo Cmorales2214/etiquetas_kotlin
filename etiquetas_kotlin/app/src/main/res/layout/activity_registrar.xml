@@ -8,12 +8,12 @@
     android:gravity="center_horizontal"
     android:orientation="vertical"
     android:layout_margin="10dp"
-    tools:context=".RegistrarUsuario">
+    tools:context=".ui.RegistrarUsuarios">
 
     <ImageView
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:background="@drawable/ic_registro"
+        android:background="@drawable/ic_baseline_account_box_24"
         android:layout_gravity="center"/>
 
 

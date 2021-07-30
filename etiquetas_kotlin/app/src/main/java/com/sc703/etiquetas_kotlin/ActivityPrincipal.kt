@@ -1,4 +1,4 @@
-package com.sc703.proyecto
+package com.sc703.etiquetas_kotlin
 
 import android.os.Bundle
 import android.view.Menu
@@ -11,7 +11,7 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
-import com.sc703.proyecto.databinding.ActivityPrincipalBinding
+import com.sc703.etiquetas_kotlin.databinding.ActivityPrincipalBinding
 
 class ActivityPrincipal : AppCompatActivity() {
 
@@ -37,7 +37,7 @@ class ActivityPrincipal : AppCompatActivity() {
         // menu should be considered as top level destinations.
         appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.nav_home, R.id.nav_gallery, R.id.nav_contacto
+                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow
             ), drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfiguration)

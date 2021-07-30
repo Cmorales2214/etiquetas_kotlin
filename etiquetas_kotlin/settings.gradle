@@ -1,0 +1,2 @@
+rootProject.name = "etiquetas_kotlin"
+include ':app'

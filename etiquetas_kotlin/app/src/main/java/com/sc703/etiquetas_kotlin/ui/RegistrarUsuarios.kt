@@ -1,4 +1,4 @@
-package com.sc703.proyecto
+package com.sc703.etiquetas_kotlin.ui
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -6,13 +6,13 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
-import android.widget.TextView
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
-import com.google.firebase.ktx.Firebase
+import com.sc703.etiquetas_kotlin.MainActivity
+import com.sc703.etiquetas_kotlin.R
 
-class RegistrarUsuario : AppCompatActivity() {
+class RegistrarUsuarios : AppCompatActivity() {
 
     //Intanciar controles
     private lateinit var edt_nombreUsuario : EditText
@@ -21,33 +21,28 @@ class RegistrarUsuario : AppCompatActivity() {
 
     private lateinit var btn_Registrar : Button
     //Instancia de autenticador
-    private lateinit var Autenticador: FirebaseAuth
+    private final lateinit var Autenticador: FirebaseAuth
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_registrar_usuario)
-        //Enlace de boton
-        btn_Registrar = findViewById(R.id.btn_Registrar)
+        setContentView(R.layout.activity_registrar_usuarios)
 
-        btn_Registrar.setOnClickListener {
-            val intent: Intent = Intent( this, MainActivity::class.java)
-            startActivity(intent)
-            finish()
-        }
         //Enlace de controles
         edt_nombreUsuario = findViewById(R.id.edt_nombreUser)
         edt_ID = findViewById(R.id.edt_idEmpleado)
         edt_contrasena = findViewById(R.id.edt_contrasena)
 
         //Iniciar autenticador
-        Autenticador = FirebaseAuth.getInstance()
+    Autenticador = FirebaseAuth.getInstance()
+}
 
-    }
+
 
     //Registrar al usuario
     fun Registro(view: View?){
         val nicknameUser = edt_nombreUsuario.toString()
-      //  val ID =  edt_ID.text.toString().toInt()
+        //  val ID =  edt_ID.text.toString().toInt()
         val contrasena = edt_contrasena.text.toString()
 
         //Validacion
@@ -79,10 +74,10 @@ class RegistrarUsuario : AppCompatActivity() {
     }
 
     private fun validarNombreVacio():Boolean{
-      //Validar espacio vacio en nombre
+        //Validar espacio vacio en nombre
         val nombreUsuario = edt_nombreUsuario.text.toString().trim { it <= ' ' }
         return if (nombreUsuario.isEmpty()){
-           edt_nombreUsuario.error = "Digite un nombre".toString()
+            edt_nombreUsuario.error = "Digite un nombre".toString()
             false
         }else {
             edt_nombreUsuario.error = null
@@ -111,6 +106,9 @@ class RegistrarUsuario : AppCompatActivity() {
             edt_contrasena.error = null
             true
         }
-    }
 
+
+
+
+}
 }
