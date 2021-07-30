@@ -21,8 +21,7 @@ class RegistrarUsuarios : AppCompatActivity() {
 
     private lateinit var btn_Registrar : Button
     //Instancia de autenticador
-    private final lateinit var Autenticador: FirebaseAuth
-
+    private lateinit var Autenticador: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,7 +33,7 @@ class RegistrarUsuarios : AppCompatActivity() {
         edt_contrasena = findViewById(R.id.edt_contrasena)
 
         //Iniciar autenticador
-    Autenticador = FirebaseAuth.getInstance()
+ //  Autenticador = FirebaseAuth.getInstance()
 }
 
 
@@ -50,10 +49,10 @@ class RegistrarUsuarios : AppCompatActivity() {
         validarIDVacio()
         validarContrasena()
 
-        Autenticador.createUserWithEmailAndPassword( nicknameUser, contrasena)
+        Autenticador!!.createUserWithEmailAndPassword( nicknameUser, contrasena)
             .addOnCompleteListener(this){ task ->
                 if (task.isSuccessful){
-                    val UserID = Autenticador.currentUser
+                    val UserID = Autenticador!!.currentUser
                     Toast.makeText(applicationContext,"Registro correcto", Toast.LENGTH_SHORT).show()
                     //Actualizar Interfaz
                     ActualizarInterfaz(UserID)
