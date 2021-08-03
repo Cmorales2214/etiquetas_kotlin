@@ -11,20 +11,13 @@ import com.sc703.etiquetas_kotlin.ui.RegistrarUsuarios
 
 class MainActivity : AppCompatActivity() {
 
-private lateinit var btn_Registrar : Button
+
     private val  Codigo_Solicitud = 1234
 
 override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        //Enlace de boton
-        btn_Registrar = findViewById(R.id.btn_Registrar)
 
-        btn_Registrar.setOnClickListener {
-            val intent: Intent = Intent( this, RegistrarUsuarios::class.java)
-            startActivity(intent)
-
-    }
 }
 
     private fun SolicitarPermisos(){
