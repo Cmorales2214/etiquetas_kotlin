@@ -1,13 +1,10 @@
 package com.sc703.etiquetas_kotlin
 
-import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
 import androidx.core.app.ActivityCompat
-import com.sc703.etiquetas_kotlin.ui.RegistrarUsuarios
 
 class MainActivity : AppCompatActivity() {
 

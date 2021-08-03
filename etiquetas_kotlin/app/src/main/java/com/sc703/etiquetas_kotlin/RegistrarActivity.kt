@@ -1,11 +1,10 @@
-package com.sc703.etiquetas_kotlin.ui
+package com.sc703.etiquetas_kotlin
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
 import android.view.View
-import android.widget.Button
 import android.widget.EditText
 import android.widget.ProgressBar
 import android.widget.Toast
@@ -13,12 +12,8 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
-import com.sc703.etiquetas_kotlin.LoginActivity
-import com.sc703.etiquetas_kotlin.MainActivity
-import com.sc703.etiquetas_kotlin.R
 
-class RegistrarUsuarios : AppCompatActivity() {
-
+class RegistrarActivity : AppCompatActivity() {
     private lateinit var txtNombre: EditText
     private lateinit var txtApellido: EditText
     private lateinit var txtCorreo : EditText
@@ -28,10 +23,9 @@ class RegistrarUsuarios : AppCompatActivity() {
     private lateinit var database : FirebaseDatabase
     private lateinit var auth : FirebaseAuth
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_registrar_usuarios)
+        setContentView(R.layout.activity_registrar2)
 
         //Referenciar las variables con las instancias
         txtNombre = findViewById(R.id.txtNombre)
@@ -45,7 +39,9 @@ class RegistrarUsuarios : AppCompatActivity() {
         auth = FirebaseAuth.getInstance()
 
         dbReference = database.reference.child("User")
-}
+
+    }
+
 
     //Funcion para el evento Onclick
     fun registro(view: View){

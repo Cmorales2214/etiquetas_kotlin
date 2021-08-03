@@ -12,7 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Etiquetas_kotlin">
-        <activity android:name=".RecuperarPassActivity"></activity>
+        <activity android:name=".RegistrarActivity"></activity>
+        <activity android:name=".RecuperarPassActivity" />
         <activity android:name=".MainActivity" />
         <activity android:name=".ui.RegistrarUsuarios" />
         <activity

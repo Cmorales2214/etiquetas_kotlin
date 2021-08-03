@@ -9,7 +9,6 @@ import android.widget.EditText
 import android.widget.ProgressBar
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
-import com.sc703.etiquetas_kotlin.ui.RegistrarUsuarios
 
 class LoginActivity : AppCompatActivity() {
 
@@ -36,7 +35,7 @@ class LoginActivity : AppCompatActivity() {
 
     fun registro(view: View){
 
-        startActivity(Intent(this, RegistrarUsuarios::class.java))
+        startActivity(Intent(this, RegistrarActivity::class.java))
     }
     fun login(view: View){
 
