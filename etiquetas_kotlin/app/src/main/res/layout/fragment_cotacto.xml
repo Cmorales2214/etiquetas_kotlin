@@ -10,6 +10,11 @@
     android:orientation="vertical"
     tools:context=".ui.contacto.CotactoFragment">
 
+    <ImageView
+        android:layout_width="85dp"
+        android:layout_height="85dp"
+        app:srcCompat="@drawable/ic_contacts" />
+
     <TextView
         android:id="@+id/tv_Contacto"
         android:layout_width="wrap_content"

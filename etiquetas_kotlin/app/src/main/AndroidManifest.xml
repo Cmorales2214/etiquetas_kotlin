@@ -12,10 +12,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Etiquetas_kotlin">
-        <activity android:name=".RegistrarActivity"></activity>
+        <activity android:name=".ui.salir.SalirActivity"></activity>
+        <activity android:name=".RegistrarActivity" />
         <activity android:name=".RecuperarPassActivity" />
         <activity android:name=".MainActivity" />
-        <activity android:name=".ui.RegistrarUsuarios" />
         <activity
             android:name=".ActivityPrincipal"
             android:label="@string/title_activity_principal"
