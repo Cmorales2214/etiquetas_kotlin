@@ -33,11 +33,9 @@ class RegistrarUsuarios : AppCompatActivity() {
         edt_contrasena = findViewById(R.id.edt_contrasena)
 
         //Iniciar autenticador
- //  Autenticador = FirebaseAuth.getInstance()
+   Autenticador = FirebaseAuth.getInstance()
 }
-
-
-
+    
     //Registrar al usuario
     fun Registro(view: View?){
         val nicknameUser = edt_nombreUsuario.toString()

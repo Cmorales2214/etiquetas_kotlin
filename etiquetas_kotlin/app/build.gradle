@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    id 'com.google.gms.google-services'
 }
 
 android {
@@ -52,12 +53,13 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 
     //Dependencias de Firebase
+
     implementation 'com.google.firebase:firebase-bom:28.0.1'
-    implementation 'com.google.firebase:firebase-analytics-ktx:19.0.0'
-    implementation 'com.google.firebase:firebase-auth-ktx:21.0.1'
+   implementation 'com.google.firebase:firebase-analytics-ktx:19.0.0'
+   implementation 'com.google.firebase:firebase-auth-ktx:21.0.1'
     implementation 'com.google.firebase:firebase-database-ktx:20.0.0'
     implementation 'com.google.firebase:firebase-storage-ktx:20.0.0'
 
     //Dependencia de RecyclerView
-    implementation 'androidx.recyclerview:recyclerview:1.2.1'
+   implementation 'androidx.recyclerview:recyclerview:1.2.1'
 }
