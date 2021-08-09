@@ -11,15 +11,15 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:text="@string/close_session_click"
         android:textAlignment="center"
-        android:textSize="20sp"
-        android:text="Presione el boton para cerrar sesion"/>
+        android:textSize="20sp" />
 
     <Button
         android:id="@+id/btn_salir"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="Cerrar sesion"/>
+        android:text="@string/btn_close_session" />
 
 </androidx.appcompat.widget.LinearLayoutCompat>
