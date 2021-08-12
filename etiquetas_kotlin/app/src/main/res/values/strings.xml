@@ -20,6 +20,7 @@
 
     <!-- Contacto -->
     <string name="Contacto">Contact:</string>
+    <string name="Contacto_label">Do you have any problems? Do you have any questions? Please let us know!</string>
     <string name="Contacto_send_mail">Send email</string>
     <string name="Contacto_no_app">No apps where found to send the email</string>
 

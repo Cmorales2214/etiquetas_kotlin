@@ -23,18 +23,40 @@
         android:textColor="@color/black"
         android:textSize="20sp" />
 
-    <Button
-        android:id="@+id/btn_Llamar"
+    <TextView
+        android:id="@+id/tv_Contacto2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/btn_call"
-        app:icon="@drawable/ic_call" />
+        android:layout_marginTop="20"
+        android:layout_marginBottom="20"
+        android:gravity="center"
+        android:text="@string/Contacto_label"
+        android:textColor="@color/black"
+        android:textSize="20sp" />
 
-    <Button
-        android:id="@+id/btn_Correo"
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/btn_send"
-        app:icon="@drawable/ic_mail" />
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_Llamar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10"
+            android:layout_marginRight="10"
+            android:text="@string/btn_call"
+            app:icon="@drawable/ic_call" />
+
+        <Button
+            android:id="@+id/btn_Correo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10"
+            android:layout_marginEnd="10"
+            android:paddingLeft="16"
+            android:text="@string/btn_send"
+            app:icon="@drawable/ic_mail" />
+    </LinearLayout>
 
 </androidx.appcompat.widget.LinearLayoutCompat>
