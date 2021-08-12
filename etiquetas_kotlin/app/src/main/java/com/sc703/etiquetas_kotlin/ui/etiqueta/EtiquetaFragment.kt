@@ -68,9 +68,23 @@ class EtiquetaFragment : Fragment() {
             db.collection("etiquetas").document(edt_TAGid.text.toString()).set(dato)
                 .addOnSuccessListener { _ ->Toast.makeText(context, R.string.TAG_add, Toast.LENGTH_SHORT)
                         .show()
+                    edt_TAGcolor.setText("")
+                    edt_TAGoperator.setText("")
+                    edt_TAGline.setText("")
+                    edt_TAGdescription.setText("")
+                    edt_TAGemission.setText("")
+                    edt_TAGclose.setText("")
+                    edt_TAGid.setText("")
                 }
                 .addOnFailureListener { _ -> Toast.makeText(context, R.string.TAG_fail, Toast.LENGTH_SHORT)
                         .show()
+                    edt_TAGcolor.setText("")
+                    edt_TAGoperator.setText("")
+                    edt_TAGline.setText("")
+                    edt_TAGdescription.setText("")
+                    edt_TAGemission.setText("")
+                    edt_TAGclose.setText("")
+                    edt_TAGid.setText("")
                 }
 
 
