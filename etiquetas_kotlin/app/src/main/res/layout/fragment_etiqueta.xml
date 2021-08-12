@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="10dp"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".ui.etiqueta.EtiquetaFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/tag_id" />
+
+        <EditText
+            android:id="@+id/edt_TAGid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/tag_id_hint"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/tag_color" />
+
+        <EditText
+            android:id="@+id/edt_TAGcolor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/tag_color_hint" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/tag_operator_name" />
+
+        <EditText
+            android:id="@+id/edt_TAGoperator"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/tag_operator_name_hint" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/tag_production_line" />
+
+        <EditText
+            android:id="@+id/edt_TAGline"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/tag_production_line_hint" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/tag_description" />
+
+        <EditText
+            android:id="@+id/edt_TAGdescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/tag_description_hint" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/tag_emission_date" />
+
+        <EditText
+            android:id="@+id/edt_TAGemission"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/tag_emission_date_hint" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/tag_close_date" />
+
+        <EditText
+            android:id="@+id/edt_TAGclose"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/tag_close_date_hint" />
+
+    </LinearLayout>
+
+    <GridLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:columnCount="2"
+        android:rowCount="2">
+
+        <Button
+            android:id="@+id/btn_TAGAgregar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_add"
+            android:layout_column="0"
+            android:layout_row="0"/>
+        <Button
+            android:id="@+id/btn_TAGBuscar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_find"
+            android:layout_column="1"
+            android:layout_row="0"
+            android:layout_marginStart="15dp"/>
+
+        <Button
+            android:id="@+id/btn_TAGEliminar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_delete"
+            android:layout_column="0"
+            android:layout_row="1"/>
+
+        <Button
+            android:id="@+id/btn_TAGEditar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_edit"
+            android:layout_marginStart="15dp"
+            android:layout_column="1"
+            android:layout_row="1"/>
+    </GridLayout>
+</androidx.appcompat.widget.LinearLayoutCompat>

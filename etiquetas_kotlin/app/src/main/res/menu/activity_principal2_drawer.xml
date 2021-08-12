@@ -22,6 +22,11 @@
             android:title="@string/menu_contactos" />
 
         <item
+            android:id="@+id/nav_tag"
+            android:icon="@drawable/ic_tag"
+            android:title="@string/menu_tag" />
+
+        <item
             android:id="@+id/nav_salir"
             android:icon="@drawable/ic_salir"
             android:title="@string/nav_salir" />

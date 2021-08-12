@@ -31,19 +31,33 @@
     <string name="btn_edit">Edit</string>
     <string name="btn_delete">Delete</string>
     <string name="btn_close_session">Close session</string>
+    <string name="btn_add">Add</string>
+    <string name="btn_find">Find</string>
 
     <!-- Menu -->
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_contactos">Contact</string>
     <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_tag">Tags</string>
 
     <!-- Etiqueta -->
+    <string name="tag_id">ID</string>
+    <string name="tag_color">Color</string>
     <string name="tag_operator_name">Operator name</string>
     <string name="tag_production_line">Production line</string>
     <string name="tag_description">Description</string>
     <string name="tag_emission_date">Emission date</string>
     <string name="tag_close_date">Close date</string>
+    <string name="tag_id_hint">Write tag id</string>
+    <string name="tag_color_hint">Write tag color</string>
+    <string name="tag_operator_name_hint">Write operator name</string>
+    <string name="tag_production_line_hint">Write production line</string>
+    <string name="tag_description_hint">Write description</string>
+    <string name="tag_emission_date_hint">Write emission date</string>
+    <string name="tag_close_date_hint">Write close date</string>
+    <string name="TAG_add">Added information</string>
+    <string name="TAG_fail">Fail</string>
 
     <!-- Close session -->
     <string name="close_session_click">Click the button below to close the current session</string>
