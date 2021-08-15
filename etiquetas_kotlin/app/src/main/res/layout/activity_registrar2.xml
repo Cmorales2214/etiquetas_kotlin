@@ -22,7 +22,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:layout_margin="10dp"
-        android:hint="Nombre"
+        android:hint="@string/Name"
         android:inputType="textPersonName"/>
 
     <EditText
@@ -31,7 +31,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:layout_margin="10dp"
-        android:hint="Apellido"
+        android:hint="@string/LastName"
         android:inputType="textPersonName"/>
 
     <EditText
@@ -40,7 +40,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:layout_margin="10dp"
-        android:hint="Correo"
+        android:hint="@string/Correo"
         android:inputType="textEmailAddress" />
 
     <EditText
@@ -48,7 +48,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="Contraseña"
+        android:hint="@string/Password"
         android:layout_margin="10dp"
         android:inputType="textPassword" />
 
@@ -57,7 +57,7 @@
         android:id="@+id/button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Crear Cuenta"
+        android:text="@string/btn_createAccount"
         android:background="@color/design_default_color_primary"
         android:textColor="@android:color/white"/>
 </LinearLayout>

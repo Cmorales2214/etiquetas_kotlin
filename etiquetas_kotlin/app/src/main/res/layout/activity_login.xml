@@ -27,7 +27,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="Correo"
+        android:hint="@string/Correo_hint"
         android:layout_margin="10dp"
         android:inputType="textEmailAddress" />
 
@@ -36,7 +36,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="Contraseña"
+        android:hint="@string/Password_hint"
         android:layout_margin="10dp"
         android:inputType="textPassword" />
 
@@ -46,7 +46,7 @@
         android:layout_margin="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="¿Olvidaste contraseña?" />
+        android:text="@string/ForgotPassword" />
 
     <TextView
         android:onClick="registro"
@@ -54,14 +54,14 @@
         android:layout_margin="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Registrar" />
+        android:text="@string/Register" />
 
     <Button
         android:onClick="login"
         android:id="@+id/btn_Login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Iniciar session"
+        android:text="@string/btn_login"
         android:layout_margin="10dp"
         android:background="@color/design_default_color_primary"
         android:textColor="@android:color/white"/>

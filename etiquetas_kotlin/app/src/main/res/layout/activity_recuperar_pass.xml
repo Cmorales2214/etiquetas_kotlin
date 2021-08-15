@@ -22,13 +22,13 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
-        android:hint="Digite correo"/>
+        android:hint="@string/Correo_hint"/>
 
     <Button
         android:onClick="enviar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Enviar contraseña"
+        android:text="@string/btn_SendPassword"
         android:background="@color/design_default_color_primary"
         android:textColor="@android:color/white"/>
 </LinearLayout>

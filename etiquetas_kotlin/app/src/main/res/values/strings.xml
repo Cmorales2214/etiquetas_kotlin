@@ -4,7 +4,7 @@
     <string name="title_activity_principal">ActivityPrincipal</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Etiquetas</string>
+    <string name="nav_header_title">Tags</string>
     <string name="nav_header_subtitle">info@etiquetas.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
@@ -15,8 +15,16 @@
     <!-- Login -->
     <string name="ID">ID:</string>
     <string name="ID_hint">Enter your ID</string>
-    <string name="Password">Password:</string>
+    <string name="Correo">Email</string>
+    <string name="Correo_hint">Enter your email</string>
+    <string name="Password">Password</string>
+    <string name="ForgotPassword">Forgot your password?</string>
     <string name="Password_hint">Enter your password</string>
+    <string name="Register">Register</string>
+
+    <!-- Register -->
+    <string name="Name">Name</string>
+    <string name="LastName">Last Name</string>
 
     <!-- Contacto -->
     <string name="Contacto">Contact:</string>
@@ -35,6 +43,8 @@
     <string name="btn_add">Add</string>
     <string name="btn_find">Find</string>
     <string name="btn_clean">Clean</string>
+    <string name="btn_SendPassword">Send password</string>
+    <string name="btn_createAccount">Create account</string>
 
     <!-- Menu -->
     <string name="menu_home">Home</string>
