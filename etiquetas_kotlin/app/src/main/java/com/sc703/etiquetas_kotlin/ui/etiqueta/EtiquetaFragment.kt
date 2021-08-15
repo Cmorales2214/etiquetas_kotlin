@@ -26,6 +26,7 @@ class EtiquetaFragment : Fragment() {
     private lateinit var btn_TAGBuscar: Button
     private lateinit var btn_TAGEliminar: Button
     private lateinit var btn_TAGEditar: Button
+    private lateinit var btn_TAGLimpiar: Button
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?): View? {
@@ -43,10 +44,13 @@ class EtiquetaFragment : Fragment() {
         btn_TAGBuscar = root.findViewById(R.id.btn_TAGBuscar)
         btn_TAGEliminar = root.findViewById(R.id.btn_TAGEliminar)
         btn_TAGEditar = root.findViewById(R.id.btn_TAGEditar)
+        btn_TAGLimpiar = root.findViewById(R.id.btn_TAGLimpiar)
 
         btn_TAGAgregar.setOnClickListener(View.OnClickListener { v -> AgregarTag(v) })
-
-
+        btn_TAGEditar.setOnClickListener(View.OnClickListener { v -> EditarTag(v) })
+        btn_TAGEliminar.setOnClickListener(View.OnClickListener { v -> EliminarTag(v) })
+        btn_TAGBuscar.setOnClickListener(View.OnClickListener { v -> BuscarTag(v) })
+        btn_TAGLimpiar.setOnClickListener(View.OnClickListener { v -> LimpiarTag(v) })
 
         return root
     }
@@ -56,18 +60,100 @@ class EtiquetaFragment : Fragment() {
         val db: FirebaseFirestore = FirebaseFirestore.getInstance()
 
 
-            val dato = hashMapOf(
-                "color" to edt_TAGcolor.text.toString(),
-                "nombre" to edt_TAGoperator.text.toString(),
-                "linea" to edt_TAGline.text.toString(),
-                "descripcion" to edt_TAGdescription.text.toString(),
-                "emision" to edt_TAGemission.text.toString(),
-                "cierre" to edt_TAGclose.text.toString()
-            )
+        val dato = hashMapOf(
+            "color" to edt_TAGcolor.text.toString(),
+            "nombre" to edt_TAGoperator.text.toString(),
+            "linea" to edt_TAGline.text.toString(),
+            "descripcion" to edt_TAGdescription.text.toString(),
+            "emision" to edt_TAGemission.text.toString(),
+            "cierre" to edt_TAGclose.text.toString()
+        )
 
-            db.collection("etiquetas").document(edt_TAGid.text.toString()).set(dato)
-                .addOnSuccessListener { _ ->Toast.makeText(context, R.string.TAG_add, Toast.LENGTH_SHORT)
+        db.collection("etiquetas").document(edt_TAGid.text.toString()).set(dato)
+            .addOnSuccessListener { _ ->Toast.makeText(context, R.string.TAG_add, Toast.LENGTH_SHORT)
+                .show()
+                edt_TAGcolor.setText("")
+                edt_TAGoperator.setText("")
+                edt_TAGline.setText("")
+                edt_TAGdescription.setText("")
+                edt_TAGemission.setText("")
+                edt_TAGclose.setText("")
+                edt_TAGid.setText("")
+            }
+            .addOnFailureListener { _ -> Toast.makeText(context, R.string.TAG_fail, Toast.LENGTH_SHORT)
+                .show()
+                edt_TAGcolor.setText("")
+                edt_TAGoperator.setText("")
+                edt_TAGline.setText("")
+                edt_TAGdescription.setText("")
+                edt_TAGemission.setText("")
+                edt_TAGclose.setText("")
+                edt_TAGid.setText("")
+            }
+
+
+    }
+
+    private fun EditarTag(view: View){
+
+        val db: FirebaseFirestore = FirebaseFirestore.getInstance()
+
+
+        val dato = hashMapOf(
+            "color" to edt_TAGcolor.text.toString(),
+            "nombre" to edt_TAGoperator.text.toString(),
+            "linea" to edt_TAGline.text.toString(),
+            "descripcion" to edt_TAGdescription.text.toString(),
+            "emision" to edt_TAGemission.text.toString(),
+            "cierre" to edt_TAGclose.text.toString()
+        )
+
+        db.collection("etiquetas").document(edt_TAGid.text.toString()).get()
+            .addOnSuccessListener { documento ->
+                if (documento.exists()) {
+
+                    db.collection("etiquetas").document(edt_TAGid.text.toString()).set(dato)
+                        .addOnSuccessListener { _ ->
+                            Toast.makeText(context, R.string.TAG_add, Toast.LENGTH_SHORT)
+                                .show()
+                            edt_TAGcolor.setText("")
+                            edt_TAGoperator.setText("")
+                            edt_TAGline.setText("")
+                            edt_TAGdescription.setText("")
+                            edt_TAGemission.setText("")
+                            edt_TAGclose.setText("")
+                            edt_TAGid.setText("")
+                        }
+                        .addOnFailureListener { _ ->
+                            Toast.makeText(context, R.string.TAG_fail, Toast.LENGTH_SHORT)
+                                .show()
+                            edt_TAGcolor.setText("")
+                            edt_TAGoperator.setText("")
+                            edt_TAGline.setText("")
+                            edt_TAGdescription.setText("")
+                            edt_TAGemission.setText("")
+                            edt_TAGclose.setText("")
+                            edt_TAGid.setText("")
+                        }
+                }else{
+                    Toast.makeText(context, R.string.TAG_Not, Toast.LENGTH_SHORT)
                         .show()
+                }
+            }
+    }
+
+    private fun EliminarTag(view: View){
+
+        val db: FirebaseFirestore = FirebaseFirestore.getInstance()
+
+
+        if (edt_TAGid.text.isNotBlank()) {
+
+            db.collection("etiquetas")
+                .document(edt_TAGid.text.toString())
+                .delete()
+                .addOnSuccessListener { _ ->Toast.makeText(context, R.string.TAG_remove, Toast.LENGTH_SHORT)
+                    .show()
                     edt_TAGcolor.setText("")
                     edt_TAGoperator.setText("")
                     edt_TAGline.setText("")
@@ -77,7 +163,7 @@ class EtiquetaFragment : Fragment() {
                     edt_TAGid.setText("")
                 }
                 .addOnFailureListener { _ -> Toast.makeText(context, R.string.TAG_fail, Toast.LENGTH_SHORT)
-                        .show()
+                    .show()
                     edt_TAGcolor.setText("")
                     edt_TAGoperator.setText("")
                     edt_TAGline.setText("")
@@ -86,8 +172,56 @@ class EtiquetaFragment : Fragment() {
                     edt_TAGclose.setText("")
                     edt_TAGid.setText("")
                 }
+        }
+    }
+
+    private fun BuscarTag(view: View){
+
+        val db: FirebaseFirestore = FirebaseFirestore.getInstance()
 
 
+        db.collection("etiquetas").document(edt_TAGid.text.toString()).get()
+            .addOnSuccessListener { documento ->
+                if(documento.exists()){
+                    val color:String? = documento.getString("color")
+                    val operador:String? = documento.getString("nombre")
+                    val lineaproducc:String? = documento.getString("linea")
+                    val descripcion:String? = documento.getString("descripcion")
+                    val emission:String? = documento.getString("emision")
+                    val dateclose:String? = documento.getString("cierre")
+                    edt_TAGcolor.setText(color)
+                    edt_TAGoperator.setText(operador)
+                    edt_TAGline.setText(lineaproducc)
+                    edt_TAGdescription.setText(descripcion)
+                    edt_TAGemission.setText(emission)
+                    edt_TAGclose.setText(dateclose)
+                }else{
+                    Toast.makeText(context, R.string.TAG_Not, Toast.LENGTH_SHORT)
+                        .show()
+                }
+
+            }
+            .addOnFailureListener { _ -> Toast.makeText(context, R.string.TAG_fail, Toast.LENGTH_SHORT)
+                .show()
+                edt_TAGcolor.setText("")
+                edt_TAGoperator.setText("")
+                edt_TAGline.setText("")
+                edt_TAGdescription.setText("")
+                edt_TAGemission.setText("")
+                edt_TAGclose.setText("")
+                edt_TAGid.setText("")
+            }
+    }
+
+    private fun LimpiarTag(view: View){
+
+                edt_TAGcolor.setText("")
+                edt_TAGoperator.setText("")
+                edt_TAGline.setText("")
+                edt_TAGdescription.setText("")
+                edt_TAGemission.setText("")
+                edt_TAGclose.setText("")
+                edt_TAGid.setText("")
     }
 
 }
