@@ -12,10 +12,10 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/nav_gallery"
-        android:name="com.sc703.etiquetas_kotlin.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
+        android:id="@+id/nav_storage"
+        android:name="com.sc703.etiquetas_kotlin.ui.storage.StorageFragment"
+        android:label="@string/menu_storage"
+        tools:layout="@layout/fragment_storage" />
 
     <fragment
         android:id="@+id/nav_slideshow"

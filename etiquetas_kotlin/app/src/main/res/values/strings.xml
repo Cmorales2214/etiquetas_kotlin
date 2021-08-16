@@ -45,10 +45,12 @@
     <string name="btn_clean">Clean</string>
     <string name="btn_SendPassword">Send password</string>
     <string name="btn_createAccount">Create account</string>
+    <string name="btn_download">Download</string>
+    <string name="btn_upload">Upload</string>
 
     <!-- Menu -->
     <string name="menu_home">Home</string>
-    <string name="menu_gallery">Gallery</string>
+    <string name="menu_storage">Tag Images</string>
     <string name="menu_contactos">Contact</string>
     <string name="menu_slideshow">Slideshow</string>
     <string name="menu_tag">Tags</string>
@@ -72,6 +74,17 @@
     <string name="TAG_fail">Fail</string>
     <string name="TAG_remove">Information deleted</string>
     <string name="TAG_Not">Not exist</string>
+
+    <!--  Storage -->
+    <string name="Storage_Image_name">Image name </string>
+    <string name="Storage_Image_name_hint">Write an image name </string>
+    <string name="Storage_Image_selection">Please select an image </string>
+    <string name="Storage_Image_load_fail">Image load failed </string>
+    <string name="Storage_upload_progress">Upload Progress </string>
+    <string name="Storage_upload">Upload successful </string>
+    <string name="Storage_upload_fail">Upload failed </string>
+    <string name="Storage_download">Download successful </string>
+    <string name="Storage_download_fail">Download failed </string>
 
 
     <!-- Close session -->
