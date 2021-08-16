@@ -8,19 +8,15 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
+        android:layout_margin="5dp"
         android:background="@color/tag_no_color"
         android:orientation="horizontal"
         android:weightSum="10">
 
         <LinearLayout
-            android:layout_width="10dp"
-            android:layout_height="match_parent"
-            android:orientation="vertical" />
-
-        <LinearLayout
             android:layout_width="97dp"
             android:layout_height="match_parent"
+            android:layout_margin="4dp"
             android:orientation="vertical">
 
             <TextView
@@ -51,9 +47,9 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="309dp"
+            android:layout_width="298dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
+            android:layout_margin="4dp"
             android:layout_weight="2.5"
             android:gravity="start"
             android:orientation="vertical">
@@ -96,19 +92,38 @@
             android:gravity="center"
             android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/tv_item_edit"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+            <LinearLayout
+                android:layout_width="46dp"
+                android:layout_height="match_parent"
+                android:layout_margin="4dp"
                 android:layout_weight="1"
-                android:background="@android:drawable/ic_menu_edit"
-                android:backgroundTint="@color/black" />
+                android:gravity="center_horizontal|center_vertical"
+                android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/tv_item_delete"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:background="@drawable/ic_delete" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="7.5"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_item_edit"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@android:drawable/ic_menu_edit"
+                        android:backgroundTint="@color/black" />
+
+                    <TextView
+                        android:id="@+id/tv_item_delete"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/ic_delete" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
         </LinearLayout>
     </LinearLayout>
     <LinearLayout
