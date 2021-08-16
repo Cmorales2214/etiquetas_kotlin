@@ -5,7 +5,7 @@ Nuestro proyecto consistirá en una aplicación para la administración de etiqu
 
 La aplicación contará con las siguientes interfaces:
 
--Una interfaz para el inicio de sesión, usando como nombre de usuario su numero de carnet, una contraseña y cual es su rol (Operario/Mecánico) .
+-Una interfaz para el inicio de sesión, usando como nombre de usuario su numero de carnet, una contraseña y cual es su rol (Operario/Mecánico).
 
 -La aplicación contará con una interfaz en donde los operarios crearan la etiqueta:
 Seleccionarán un color de la etiqueta, fecha, número de carnet, nombre de la línea de producción y descripción de la falla.
@@ -14,7 +14,6 @@ Seleccionarán un color de la etiqueta, fecha, número de carnet, nombre de la l
 *Rojo: Falla o defecto funcional
 *Verde: Control de calidad
 *Azul: Una mejora a la máquina o al proceso
-
 
 -Los mecánicos, al ingresar a la cuenta verán las etiquetas que están creadas, podrán seleccionarlas, podrán agregar comentarios sobre el trabajo realizados y cerrar la etiqueta.
 
