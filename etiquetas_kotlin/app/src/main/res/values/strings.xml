@@ -11,7 +11,6 @@
     <string name="nav_contacts">Contacts</string>
     <string name="nav_salir">Close session</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="email">proyectofidelitas09@gmail.com</string>
 
     <!-- Login -->
     <string name="ID">ID:</string>
@@ -35,6 +34,7 @@
     <string name="Contact_number">88888888</string>
     <string name="Contact_email_subject">Feedback</string>
     <string name="Contact_email_message">Hello! I have feedback to report.</string>
+    <string name="email">proyectofidelitas09@gmail.com</string>
 
     <!-- Buttons -->
     <string name="btn_register">Register</string>
