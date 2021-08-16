@@ -80,11 +80,11 @@ class EtiquetaFragment : Fragment() {
 
         db.collection("etiquetas").document(edt_TAGid.text.toString()).set(dato)
             .addOnSuccessListener { _ ->
-                Toast.makeText(context, R.string.TAG_add, Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, R.string.tag_add, Toast.LENGTH_SHORT).show()
                 LimpiarTag(view)
             }
             .addOnFailureListener { _ ->
-                Toast.makeText(context, R.string.TAG_fail, Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, R.string.tag_fail, Toast.LENGTH_SHORT).show()
                 LimpiarTag(view)
                 LimpiarTag(view)
             }
@@ -107,15 +107,15 @@ class EtiquetaFragment : Fragment() {
                 if (documento.exists()) {
                     db.collection("etiquetas").document(edt_TAGid.text.toString()).set(dato)
                         .addOnSuccessListener { _ ->
-                            Toast.makeText(context, R.string.TAG_add, Toast.LENGTH_SHORT).show()
+                            Toast.makeText(context, R.string.tag_add, Toast.LENGTH_SHORT).show()
                             LimpiarTag(view)
                         }
                         .addOnFailureListener { _ ->
-                            Toast.makeText(context, R.string.TAG_fail, Toast.LENGTH_SHORT).show()
+                            Toast.makeText(context, R.string.tag_fail, Toast.LENGTH_SHORT).show()
                             LimpiarTag(view)
                         }
                 }else{
-                    Toast.makeText(context, R.string.TAG_Not, Toast.LENGTH_SHORT).show()
+                    Toast.makeText(context, R.string.tag_not_found, Toast.LENGTH_SHORT).show()
                 }
             }
     }
@@ -127,10 +127,10 @@ class EtiquetaFragment : Fragment() {
             db.collection("etiquetas")
                 .document(edt_TAGid.text.toString())
                 .delete()
-                .addOnSuccessListener { _ ->Toast.makeText(context, R.string.TAG_remove, Toast.LENGTH_SHORT).show()
+                .addOnSuccessListener { _ ->Toast.makeText(context, R.string.tag_remove, Toast.LENGTH_SHORT).show()
                     LimpiarTag(view)
                 }
-                .addOnFailureListener { _ -> Toast.makeText(context, R.string.TAG_fail, Toast.LENGTH_SHORT).show()
+                .addOnFailureListener { _ -> Toast.makeText(context, R.string.tag_fail, Toast.LENGTH_SHORT).show()
                     LimpiarTag(view)
                 }
         }
@@ -156,6 +156,7 @@ class EtiquetaFragment : Fragment() {
                         if (resources.getStringArray(R.array.tag_colors)[i].toString() == color) {
                             spn_TAGcolor.setSelection(i)
                             selected_color = resources.getStringArray(R.array.tag_colors)[i].toString()
+                            i++
                         }
                     }
                     edt_TAGoperator.setText(operador)
@@ -164,10 +165,10 @@ class EtiquetaFragment : Fragment() {
                     edt_TAGemission.setText(emission)
                     edt_TAGclose.setText(dateclose)
                 }else{
-                    Toast.makeText(context, R.string.TAG_Not, Toast.LENGTH_SHORT).show()
+                    Toast.makeText(context, R.string.tag_not_found, Toast.LENGTH_SHORT).show()
                 }
             }
-            .addOnFailureListener { _ -> Toast.makeText(context, R.string.TAG_fail, Toast.LENGTH_SHORT).show()
+            .addOnFailureListener { _ -> Toast.makeText(context, R.string.tag_fail, Toast.LENGTH_SHORT).show()
                 LimpiarTag(view)
             }
     }

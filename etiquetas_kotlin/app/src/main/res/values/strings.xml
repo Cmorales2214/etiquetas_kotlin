@@ -55,7 +55,7 @@
     <!-- Menu -->
     <string name="menu_home">Home</string>
     <string name="menu_storage">Tag Images</string>
-    <string name="menu_contactos">Contact</string>
+    <string name="menu_contact">Contact</string>
     <string name="menu_slideshow">Slideshow</string>
     <string name="menu_tag">Tags</string>
 
@@ -74,10 +74,10 @@
     <string name="tag_description_hint">Write description</string>
     <string name="tag_emission_date_hint">Write emission date</string>
     <string name="tag_close_date_hint">Write close date</string>
-    <string name="TAG_add">Added information</string>
-    <string name="TAG_fail">Fail</string>
-    <string name="TAG_remove">Information deleted</string>
-    <string name="TAG_Not">Not exist</string>
+    <string name="tag_add">Added information</string>
+    <string name="tag_fail">Operation failed</string>
+    <string name="tag_remove">Information deleted</string>
+    <string name="tag_not_found">Information not found</string>
     <string-array name="TAG_spinner_options">
         <item>Red (report a flaw)</item>
         <item>Blue (quality assurance)</item>
