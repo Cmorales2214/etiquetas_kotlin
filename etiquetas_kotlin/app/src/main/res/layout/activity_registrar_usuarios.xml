@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.appcompat.widget.LinearLayoutCompat
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center_horizontal"
-    android:orientation="vertical"
     android:layout_margin="10dp"
+    android:gravity="center_horizontal|center_vertical"
+    android:orientation="vertical"
     tools:context=".ui.RegistrarUsuarios">
 
     <ImageView
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:background="@drawable/ic_baseline_account_box_24"
-        android:layout_gravity="center"/>
+        android:layout_gravity="center"
+        android:background="@drawable/ic_baseline_account_box_24" />
 
 
     <TextView
@@ -22,7 +21,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Nombre de usuario"
-        android:textSize="20sp"/>
+        android:textSize="20sp" />
 
     <EditText
         android:id="@+id/edt_nombreUser"
@@ -30,14 +29,14 @@
         android:layout_height="wrap_content"
         android:hint="Digite su nombre "
         android:inputType="textPersonName"
-        android:textSize="20sp"/>
+        android:textSize="20sp" />
 
     <TextView
         android:id="@+id/txt_idEmpleado"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Numero de carnet"
-        android:textSize="20sp"/>
+        android:textSize="20sp" />
 
     <EditText
         android:id="@+id/edt_idEmpleado"
@@ -45,14 +44,14 @@
         android:layout_height="wrap_content"
         android:hint="Digite su id "
         android:inputType="textPersonName"
-        android:textSize="20sp"/>
+        android:textSize="20sp" />
 
     <TextView
         android:id="@+id/txt_contrasena"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Contraseña:"
-        android:textSize="20sp"/>
+        android:textSize="20sp" />
 
     <EditText
         android:id="@+id/edt_contrasena"
@@ -60,7 +59,8 @@
         android:layout_height="wrap_content"
         android:hint="Digite su contraseña"
         android:inputType="textPassword"
-        android:textSize="20sp"/>
+        android:textSize="20sp" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -71,8 +71,8 @@
             android:id="@+id/btn_Registrar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
-            android:text="Registrar"/>
+            android:text="Registrar"
+            android:textSize="20sp" />
 
 
     </LinearLayout>

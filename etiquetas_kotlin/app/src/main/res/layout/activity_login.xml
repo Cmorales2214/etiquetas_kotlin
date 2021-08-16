@@ -1,68 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="center_vertical"
     android:orientation="vertical"
     tools:context=".LoginActivity">
 
     <ImageView
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:background="@drawable/ic_user"
-        android:layout_gravity="center"/>
+        android:layout_gravity="center"
+        android:background="@drawable/ic_user" />
 
     <ProgressBar
         android:id="@+id/progressBar2"
         style="?android:attr/progressBarStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:visibility="gone"
-        android:indeterminate="true"/>
+        android:indeterminate="true"
+        android:visibility="gone" />
 
     <EditText
         android:id="@+id/txtUser"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="10dp"
         android:ems="10"
         android:hint="@string/Correo_hint"
-        android:layout_margin="10dp"
         android:inputType="textEmailAddress" />
 
     <EditText
         android:id="@+id/txtPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="10dp"
         android:ems="10"
         android:hint="@string/Password_hint"
-        android:layout_margin="10dp"
         android:inputType="textPassword" />
 
     <TextView
-        android:onClick="olvidarContrasena"
-        android:gravity="center"
-        android:layout_margin="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:gravity="center"
+        android:onClick="olvidarContrasena"
         android:text="@string/ForgotPassword" />
 
     <TextView
-        android:onClick="registro"
-        android:gravity="center"
-        android:layout_margin="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:gravity="center"
+        android:onClick="registro"
         android:text="@string/Register" />
 
     <Button
-        android:onClick="login"
         android:id="@+id/btn_Login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/btn_login"
         android:layout_margin="10dp"
         android:background="@color/design_default_color_primary"
-        android:textColor="@android:color/white"/>
+        android:onClick="login"
+        android:text="@string/btn_login"
+        android:textColor="@android:color/white" />
 </LinearLayout>
