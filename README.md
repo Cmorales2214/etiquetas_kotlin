@@ -1,7 +1,6 @@
 # etiquetas_kotlin
 Proyecto de programación en dispositivos móviles.
 
-
 Nuestro proyecto consistirá en una aplicación para la administración de etiquetas de trabajo y fallas en maquinas a nivel industrial, específicamente dirigidos al personal de producción y mantenimiento, para apoyar la mejora continua de los procesos.
 
 La aplicación contará con las siguientes interfaces:
@@ -9,7 +8,13 @@ La aplicación contará con las siguientes interfaces:
 -Una interfaz para el inicio de sesión, usando como nombre de usuario su numero de carnet, una contraseña y cual es su rol (Operario/Mecánico) .
 
 -La aplicación contará con una interfaz en donde los operarios crearan la etiqueta:
-Seleccionarán color de la etiqueta(Rojo (Rojo (falla o defecto funcional), verde(Control de calidad, azul(Una mejora a la maquina o al proceso)), fecha, numero de carnet, nombre de la línea de producción y descripción de la falla.
+Seleccionarán un color de la etiqueta, fecha, número de carnet, nombre de la línea de producción y descripción de la falla.
+
+-Los colores y sus respectivos significados son los siguientes:
+*Rojo: Falla o defecto funcional
+*Verde: Control de calidad
+*Azul: Una mejora a la máquina o al proceso
+
 
 -Los mecánicos, al ingresar a la cuenta verán las etiquetas que están creadas, podrán seleccionarlas, podrán agregar comentarios sobre el trabajo realizados y cerrar la etiqueta.
 

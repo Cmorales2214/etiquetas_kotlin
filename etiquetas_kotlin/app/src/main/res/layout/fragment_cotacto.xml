@@ -19,7 +19,7 @@
         android:id="@+id/tv_Contacto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/Contacto"
+        android:text="@string/Contact"
         android:textColor="@color/black"
         android:textSize="20sp" />
 
@@ -30,7 +30,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginBottom="20dp"
         android:gravity="center"
-        android:text="@string/Contacto_label"
+        android:text="@string/Contact_label"
         android:textColor="@color/black"
         android:textSize="20sp" />
 
@@ -55,7 +55,7 @@
             android:layout_marginLeft="10dp"
             android:layout_marginEnd="10dp"
             android:paddingLeft="16dp"
-            android:text="@string/btn_send"
+            android:text="@string/btn_send_email"
             app:icon="@drawable/ic_mail" />
     </LinearLayout>
 

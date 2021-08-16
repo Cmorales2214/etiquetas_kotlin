@@ -16,7 +16,6 @@ class CotactoFragment : Fragment() {
 
     private lateinit var btn_Llamar : Button
     private lateinit var btn_Email : Button
-    val telefono = "12345678"
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val root = inflater.inflate(R.layout.fragment_cotacto, container, false)
@@ -24,10 +23,17 @@ class CotactoFragment : Fragment() {
         btn_Llamar = root.findViewById(R.id.btn_Llamar)
         btn_Email = root.findViewById(R.id.btn_Correo)
 
-        btn_Llamar.setOnClickListener(View.OnClickListener { Llamar("tel:" + telefono) })
+        btn_Llamar.setOnClickListener(View.OnClickListener {
+            Llamar("tel:" + R.string.Contact_number.toString())
+        })
 
         btn_Email.setOnClickListener(View.OnClickListener {
-            Correo("prueba@prueba", "Etiqueta", "Reporte") })
+            Correo(
+                R.string.email.toString(),
+                R.string.Contact_email_subject.toString(),
+                R.string.Contact_email_message.toString()
+            )
+        })
 
         return root
     }
@@ -46,9 +52,9 @@ class CotactoFragment : Fragment() {
         email.putExtra(Intent.EXTRA_TEXT, Mensaje)
 
         try {
-            startActivity(Intent.createChooser(email,R.string.Contacto_send_mail.toString()))
+            startActivity(Intent.createChooser(email,R.string.Contact_send_mail.toString()))
         }catch (e: ActivityNotFoundException){
-            Toast.makeText(context,R.string.Contacto_no_app, Toast.LENGTH_SHORT).show()
+            Toast.makeText(context,R.string.Contact_no_app, Toast.LENGTH_SHORT).show()
         }
     }
 
