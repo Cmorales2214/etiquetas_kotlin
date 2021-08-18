@@ -26,7 +26,7 @@
     <fragment
         android:id="@+id/nav_contact"
         android:name="com.sc703.etiquetas_kotlin.ui.contacto.CotactoFragment"
-        android:label="@string/menu_contactos"
+        android:label="@string/menu_contact"
         tools:layout="@layout/fragment_cotacto" />
 
     <fragment
