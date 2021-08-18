@@ -63,4 +63,7 @@ dependencies {
 
     //Dependencia de RecyclerView
   implementation 'androidx.recyclerview:recyclerview:1.2.1'
+
+    //AdMob
+    implementation 'com.google.android.gms:play-services-ads:20.2.0'
 }
