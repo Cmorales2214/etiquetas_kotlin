@@ -153,11 +153,11 @@ class EtiquetaFragment : Fragment() {
                     spn_TAGcolor.setSelection(0)
                     selected_color = resources.getStringArray(R.array.tag_colors)[0].toString()
                     resources.getStringArray(R.array.tag_colors).forEach {
-                        if (resources.getStringArray(R.array.tag_colors)[i].toString() == color) {
+                        if (resources.getStringArray(R.array.tag_colors)[i].toString() == color.toString()) {
                             spn_TAGcolor.setSelection(i)
                             selected_color = resources.getStringArray(R.array.tag_colors)[i].toString()
-                            i++
                         }
+                        i++
                     }
                     edt_TAGoperator.setText(operador)
                     edt_TAGline.setText(lineaproducc)
