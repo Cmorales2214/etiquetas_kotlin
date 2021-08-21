@@ -137,7 +137,6 @@ class EtiquetaFragment : Fragment() {
     }
 
     private fun BuscarTag(view: View){
-        //Ale: Probé buscar con la versión anterior y no funcionó, así que asumo que mi código esta bien
         val db: FirebaseFirestore = FirebaseFirestore.getInstance()
 
         db.collection("etiquetas").document(edt_TAGid.text.toString()).get()
