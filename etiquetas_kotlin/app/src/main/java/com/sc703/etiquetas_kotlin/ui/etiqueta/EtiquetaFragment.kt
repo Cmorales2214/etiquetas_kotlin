@@ -2,6 +2,7 @@ package com.sc703.etiquetas_kotlin.ui.etiqueta
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Base64
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -9,6 +10,9 @@ import android.view.ViewGroup
 import android.widget.*
 import com.google.firebase.firestore.FirebaseFirestore
 import com.sc703.etiquetas_kotlin.R
+import java.security.MessageDigest
+import javax.crypto.Cipher
+import javax.crypto.spec.SecretKeySpec
 
 
 class EtiquetaFragment : Fragment() {
@@ -26,6 +30,9 @@ class EtiquetaFragment : Fragment() {
     private lateinit var btn_TAGEliminar: Button
     private lateinit var btn_TAGEditar: Button
     private lateinit var btn_TAGLimpiar: Button
+
+    private val llave_Encriptacion =
+        "12354-*-/werfmksdfSDF23$%^&*=="
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val root = inflater.inflate(R.layout.fragment_etiqueta, container, false)
@@ -70,15 +77,15 @@ class EtiquetaFragment : Fragment() {
     private fun AgregarTag(view: View){
         val db: FirebaseFirestore = FirebaseFirestore.getInstance()
         val dato = hashMapOf(
-            "color" to selected_color.toString(),
-            "nombre" to edt_TAGoperator.text.toString(),
-            "linea" to edt_TAGline.text.toString(),
-            "descripcion" to edt_TAGdescription.text.toString(),
-            "emision" to edt_TAGemission.text.toString(),
-            "cierre" to edt_TAGclose.text.toString()
+            "color" to Encriptar(selected_color.toString(), llave_Encriptacion),
+            "nombre" to Encriptar(edt_TAGoperator.text.toString(), llave_Encriptacion),
+            "linea" to Encriptar(edt_TAGline.text.toString(), llave_Encriptacion),
+            "descripcion" to Encriptar(edt_TAGdescription.text.toString(), llave_Encriptacion),
+            "emision" to Encriptar(edt_TAGemission.text.toString(), llave_Encriptacion),
+            "cierre" to Encriptar(edt_TAGclose.text.toString(), llave_Encriptacion)
         )
 
-        db.collection("etiquetas").document(edt_TAGid.text.toString()).set(dato)
+        db.collection("etiquetas").document(Encriptar(edt_TAGid.text.toString(), llave_Encriptacion)).set(dato)
             .addOnSuccessListener { _ ->
                 Toast.makeText(context, R.string.tag_add, Toast.LENGTH_SHORT).show()
                 LimpiarTag(view)
@@ -94,18 +101,18 @@ class EtiquetaFragment : Fragment() {
         val db: FirebaseFirestore = FirebaseFirestore.getInstance()
 
         val dato = hashMapOf(
-            "color" to selected_color.toString(),
-            "nombre" to edt_TAGoperator.text.toString(),
-            "linea" to edt_TAGline.text.toString(),
-            "descripcion" to edt_TAGdescription.text.toString(),
-            "emision" to edt_TAGemission.text.toString(),
-            "cierre" to edt_TAGclose.text.toString()
+            "color" to Encriptar(selected_color.toString(), llave_Encriptacion),
+            "nombre" to Encriptar(edt_TAGoperator.text.toString(), llave_Encriptacion),
+            "linea" to Encriptar(edt_TAGline.text.toString(), llave_Encriptacion),
+            "descripcion" to Encriptar(edt_TAGdescription.text.toString(), llave_Encriptacion),
+            "emision" to Encriptar(edt_TAGemission.text.toString(), llave_Encriptacion),
+            "cierre" to Encriptar(edt_TAGclose.text.toString(), llave_Encriptacion)
         )
 
-        db.collection("etiquetas").document(edt_TAGid.text.toString()).get()
+        db.collection("etiquetas").document(Encriptar(edt_TAGid.text.toString(), llave_Encriptacion)).get()
             .addOnSuccessListener { documento ->
                 if (documento.exists()) {
-                    db.collection("etiquetas").document(edt_TAGid.text.toString()).set(dato)
+                    db.collection("etiquetas").document(Encriptar(edt_TAGid.text.toString(), llave_Encriptacion)).set(dato)
                         .addOnSuccessListener { _ ->
                             Toast.makeText(context, R.string.tag_add, Toast.LENGTH_SHORT).show()
                             LimpiarTag(view)
@@ -125,7 +132,7 @@ class EtiquetaFragment : Fragment() {
 
         if (edt_TAGid.text.isNotBlank()) {
             db.collection("etiquetas")
-                .document(edt_TAGid.text.toString())
+                .document(Encriptar(edt_TAGid.text.toString(), llave_Encriptacion))
                 .delete()
                 .addOnSuccessListener { _ ->Toast.makeText(context, R.string.tag_remove, Toast.LENGTH_SHORT).show()
                     LimpiarTag(view)
@@ -140,15 +147,15 @@ class EtiquetaFragment : Fragment() {
         //Ale: Probé buscar con la versión anterior y no funcionó, así que asumo que mi código esta bien
         val db: FirebaseFirestore = FirebaseFirestore.getInstance()
 
-        db.collection("etiquetas").document(edt_TAGid.text.toString()).get()
+        db.collection("etiquetas").document(Encriptar(edt_TAGid.text.toString(), llave_Encriptacion)).get()
             .addOnSuccessListener { documento ->
                 if(documento.exists()){
-                    val color:String? = documento.getString("color")
-                    val operador:String? = documento.getString("nombre")
-                    val lineaproducc:String? = documento.getString("linea")
-                    val descripcion:String? = documento.getString("descripcion")
-                    val emission:String? = documento.getString("emision")
-                    val dateclose:String? = documento.getString("cierre")
+                    val color:String? = Desencriptar(documento.getString("color").toString(), llave_Encriptacion)
+                    val operador:String? = Desencriptar(documento.getString("nombre").toString(), llave_Encriptacion)
+                    val lineaproducc:String? = Desencriptar(documento.getString("linea").toString(), llave_Encriptacion)
+                    val descripcion:String? = Desencriptar(documento.getString("descripcion").toString(), llave_Encriptacion)
+                    val emission:String? = Desencriptar(documento.getString("emision").toString(), llave_Encriptacion)
+                    val dateclose:String? = Desencriptar(documento.getString("cierre").toString(), llave_Encriptacion)
                     var i = 0
                     spn_TAGcolor.setSelection(0)
                     selected_color = resources.getStringArray(R.array.tag_colors)[0].toString()
@@ -182,6 +189,30 @@ class EtiquetaFragment : Fragment() {
         edt_TAGemission.setText("")
         edt_TAGclose.setText("")
         edt_TAGid.setText("")
+    }
+
+    private fun GenerarClaveCriptografica(Llave: String): SecretKeySpec {
+        val SHA_256 = MessageDigest.getInstance("SHA-256")
+        var clave: ByteArray? = Llave.toByteArray(charset("UTF-8"))
+        clave = SHA_256.digest(clave)
+        return SecretKeySpec(clave, "AES")
+    }
+
+    private fun Encriptar(txt_Encriptar: String, Clave: String): String {
+        val clavesecreta = GenerarClaveCriptografica(Clave)
+        val cipher = Cipher.getInstance("AES")
+        cipher.init(Cipher.ENCRYPT_MODE, clavesecreta)
+        val datosBytes = cipher.doFinal(txt_Encriptar.toByteArray())
+        return Base64.encodeToString(datosBytes, Base64.DEFAULT)
+    }
+
+    private fun Desencriptar(txt_Desencriptar: String, Clave: String): String {
+        val clavesecreta = GenerarClaveCriptografica(Clave)
+        val cipher = Cipher.getInstance("AES")
+        cipher.init(Cipher.DECRYPT_MODE, clavesecreta)
+        val datosdecodificados = Base64.decode(txt_Desencriptar, Base64.DEFAULT)
+        val datosBytes = cipher.doFinal(datosdecodificados)
+        return String(datosBytes)
     }
 
 }
