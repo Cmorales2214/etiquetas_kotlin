@@ -5,15 +5,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="10dp"
     android:gravity="center"
     android:orientation="vertical"
+    android:background="@drawable/background"
     tools:context=".ui.contacto.CotactoFragment">
 
     <ImageView
         android:layout_width="85dp"
         android:layout_height="85dp"
-        app:srcCompat="@drawable/ic_contacts" />
+        app:srcCompat="@drawable/contact" />
 
     <TextView
         android:id="@+id/tv_Contacto"

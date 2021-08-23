@@ -3,9 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="10dp"
+    android:layout_margin="2dp"
     android:gravity="center"
     android:orientation="vertical"
+    android:background="@drawable/backgr"
     tools:context=".ui.etiqueta.EtiquetaFragment">
 
     <LinearLayout
@@ -17,6 +18,8 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-black"
+            android:textColor="@color/black"
             android:text="@string/tag_id" />
 
         <EditText
@@ -28,6 +31,8 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-black"
+            android:textColor="@color/black"
             android:text="@string/tag_color" />
 
         <EditText
@@ -45,6 +50,8 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-black"
+            android:textColor="@color/black"
             android:text="@string/tag_operator_name" />
 
         <EditText
@@ -56,6 +63,8 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-black"
+            android:textColor="@color/black"
             android:text="@string/tag_production_line" />
 
         <EditText
@@ -67,6 +76,8 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-black"
+            android:textColor="@color/black"
             android:text="@string/tag_description" />
 
         <EditText
@@ -77,6 +88,8 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-black"
+            android:textColor="@color/black"
             android:text="@string/tag_emission_date" />
 
         <EditText
@@ -87,6 +100,8 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-black"
+            android:textColor="@color/black"
             android:text="@string/tag_close_date" />
 
         <EditText

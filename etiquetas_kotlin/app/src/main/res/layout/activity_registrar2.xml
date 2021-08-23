@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/backgr"
     android:orientation="vertical"
     tools:context=".RegistrarActivity">
 
@@ -12,34 +12,34 @@
         android:id="@+id/progressBar"
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="match_parent"
-        android:indeterminate="true"
         android:layout_height="wrap_content"
-        android:visibility="gone"/>
+        android:indeterminate="true"
+        android:visibility="gone" />
 
     <EditText
         android:id="@+id/txtNombre"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
         android:layout_margin="10dp"
+        android:ems="10"
         android:hint="@string/Name"
-        android:inputType="textPersonName"/>
+        android:inputType="textPersonName" />
 
     <EditText
         android:id="@+id/txtApellido"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
         android:layout_margin="10dp"
+        android:ems="10"
         android:hint="@string/LastName"
-        android:inputType="textPersonName"/>
+        android:inputType="textPersonName" />
 
     <EditText
         android:id="@+id/txtEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
         android:layout_margin="10dp"
+        android:ems="10"
         android:hint="@string/Correo"
         android:inputType="textEmailAddress" />
 
@@ -47,17 +47,17 @@
         android:id="@+id/txtPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="10dp"
         android:ems="10"
         android:hint="@string/Password"
-        android:layout_margin="10dp"
         android:inputType="textPassword" />
 
     <Button
-        android:onClick="registro"
         android:id="@+id/button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/btn_createAccount"
         android:background="@color/design_default_color_primary"
-        android:textColor="@android:color/white"/>
+        android:onClick="registro"
+        android:text="@string/btn_createAccount"
+        android:textColor="@android:color/white" />
 </LinearLayout>
