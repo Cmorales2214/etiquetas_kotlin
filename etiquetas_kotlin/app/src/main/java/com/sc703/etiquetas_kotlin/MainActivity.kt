@@ -28,7 +28,7 @@ override fun onCreate(savedInstanceState: Bundle?) {
     override fun onStart() {
         super.onStart()
         val User = auth.currentUser
-        Toast.makeText(applicationContext, "Inicio de sesion correcto", Toast.LENGTH_SHORT).show()
+        Toast.makeText(applicationContext, R.string.toast_login_successful, Toast.LENGTH_SHORT).show()
         ActualizarInterfaz(User)
     }
 

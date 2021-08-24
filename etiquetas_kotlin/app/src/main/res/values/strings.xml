@@ -15,8 +15,8 @@
     <!-- Login -->
     <string name="ID">ID:</string>
     <string name="ID_hint">Enter your ID</string>
-    <string name="Correo">Email</string>
-    <string name="Correo_hint">Enter your email</string>
+    <string name="Email_label">Email</string>
+    <string name="Email_hint">Enter your email</string>
     <string name="Password">Password</string>
     <string name="ForgotPassword">Forgot your password?</string>
     <string name="Password_hint">Enter your password</string>
@@ -102,4 +102,10 @@
 
     <!-- Close session -->
     <string name="close_session_click">Click the button below to close the current session</string>
+
+    <!-- Toast messages -->
+    <string name="toast_email_sent">Email sent</string>
+    <string name="toast_wrong">Something went wrong</string>
+    <string name="toast_login_successful">Login successful</string>
+    <string name="toast_log_out">Disconnecting</string>
 </resources>

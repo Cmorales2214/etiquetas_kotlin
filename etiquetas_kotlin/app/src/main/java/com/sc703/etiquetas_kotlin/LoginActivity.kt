@@ -29,16 +29,16 @@ class LoginActivity : AppCompatActivity() {
 
         auth = FirebaseAuth.getInstance()
     }
+
     fun olvidarContrasena(view: View){
         startActivity(Intent(this, RecuperarPassActivity::class.java))
     }
 
     fun registro(view: View){
-
         startActivity(Intent(this, RegistrarActivity::class.java))
     }
-    fun login(view: View){
 
+    fun login(view: View){
         loginUsuario()
     }
 
@@ -58,8 +58,7 @@ class LoginActivity : AppCompatActivity() {
                     if(task.isSuccessful){
                         session()
                     }else{
-                        Toast.makeText(this, "Error al iniciar session",
-                            Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this, R.string.toast_wrong, Toast.LENGTH_SHORT).show()
                     }
                 }
         }

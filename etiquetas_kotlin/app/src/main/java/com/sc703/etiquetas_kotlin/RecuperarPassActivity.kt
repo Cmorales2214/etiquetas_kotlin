@@ -52,10 +52,10 @@ class RecuperarPassActivity : AppCompatActivity() {
                     if(task.isSuccessful){
                         progressBar.visibility = View.VISIBLE
                         startActivity(Intent(this, LoginActivity::class.java))
-                        Toast.makeText(this, "Email enviado",
+                        Toast.makeText(this, R.string.toast_email_sent,
                             Toast.LENGTH_SHORT).show()
                     } else{
-                        Toast.makeText(this, "Error al enviar Email",
+                        Toast.makeText(this, R.string.toast_wrong,
                             Toast.LENGTH_SHORT).show()
                     }
                 }
