@@ -1,16 +1,16 @@
 <resources>
     <!-- General -->
-    <string name="app_name">Project</string>
-    <string name="title_activity_principal">ActivityPrincipal</string>
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Tags</string>
-    <string name="nav_header_subtitle">proyectofidelitas09@gmail.com</string>
-    <string name="nav_header_desc">Navigation header</string>
-    <string name="action_settings">Settings</string>
-    <string name="nav_contacts">Contacts</string>
+    <string name="app_name" translatable="false">Tags</string>
+    <string name="title_activity_principal" translatable="false">ActivityPrincipal</string>
+    <string name="navigation_drawer_open" translatable="false">Open navigation drawer</string>
+    <string name="navigation_drawer_close" translatable="false">Close navigation drawer</string>
+    <string name="nav_header_title" translatable="false">Tags</string>
+    <string name="nav_header_subtitle" translatable="false">proyectofidelitas09@gmail.com</string>
+    <string name="nav_header_desc" translatable="false">Navigation header</string>
+    <string name="action_settings" translatable="false">Settings</string>
+    <string name="nav_contacts" translatable="false">Contacts</string>
     <string name="nav_salir">Close session</string>
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
 
     <!-- Login -->
     <string name="ID">ID:</string>
@@ -34,7 +34,7 @@
     <string name="Contact_number">88888888</string>
     <string name="Contact_email_subject">Feedback</string>
     <string name="Contact_email_message">Hello! I have feedback to report.</string>
-    <string name="email">proyectofidelitas09@gmail.com</string>
+    <string name="email" translatable="false">proyectofidelitas09@gmail.com</string>
 
     <!-- Buttons -->
     <string name="btn_register">Register</string>
@@ -56,7 +56,7 @@
     <string name="menu_home">Home</string>
     <string name="menu_storage">Tag Images</string>
     <string name="menu_contact">Contact</string>
-    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_slideshow" translatable="false">Slideshow</string>
     <string name="menu_tag">Tags</string>
     <string name="menu_list">Tag List</string>
 
@@ -110,4 +110,5 @@
     <string name="toast_wrong">Something went wrong</string>
     <string name="toast_login_successful">Login successful</string>
     <string name="toast_log_out">Disconnecting</string>
+    <string name="welcome_App">Welcome to app</string>
 </resources>

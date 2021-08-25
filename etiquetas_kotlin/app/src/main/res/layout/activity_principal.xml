@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
+    android:background="@drawable/background"
     tools:openDrawer="start">
 
     <include
@@ -22,4 +23,5 @@
         android:fitsSystemWindows="true"
         app:headerLayout="@layout/nav_header_activity_principal"
         app:menu="@menu/activity_principal2_drawer" />
+
 </androidx.drawerlayout.widget.DrawerLayout>
