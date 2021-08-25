@@ -1,17 +1,21 @@
 package com.sc703.etiquetas_kotlin.ui.list
 
+import android.R.color
 import android.annotation.SuppressLint
-import android.database.sqlite.SQLiteDatabase
+import android.content.Context
+import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.TextView
-import android.widget.Toast
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.sc703.etiquetas_kotlin.R
 
-class Adaptador(private var lista: MutableList<Etiquetas>) : RecyclerView.Adapter<Adaptador.Holder>() {
+
+class Adaptador(private var lista: MutableList<Etiquetas>, var parent: Context?)
+    : RecyclerView.Adapter<Adaptador.Holder>() {
 
     private lateinit var itemClickListener: ItemClickListener
 
@@ -50,15 +54,22 @@ class Adaptador(private var lista: MutableList<Etiquetas>) : RecyclerView.Adapte
         holder.tv_item_emission_date.text = String.format(e.emision.toString())
         holder.tv_item_close_date.text = String.format(e.cierre.toString())
         if(String.format(e.color.toString()) == "Red") {
-            holder.tag.setBackgroundColor(R.color.tag_red);
+            holder.tag.setBackgroundColor(Color.parseColor(getColor(R.color.tag_red)));
         }
         if(String.format(e.color.toString()) == "Blue") {
-            holder.tag.setBackgroundColor(R.color.tag_blue);
+            holder.tag.setBackgroundColor(Color.parseColor(getColor(R.color.tag_blue)));
         }
-        if(String.format(e.color.toString()) == "Green") { holder.tag.setBackgroundColor(R.color.tag_green); }
+        if(String.format(e.color.toString()) == "Green") {
+            holder.tag.setBackgroundColor(Color.parseColor(getColor(R.color.tag_green)));
+        }
     }
 
     override fun getItemCount(): Int {
         return lista.size
+    }
+
+    private fun getColor(color_resource : Int):String{
+        var hex = String.format("%06X", 0xFFFFFF and parent?.let { ContextCompat.getColor(it, color_resource) }!!)
+        return "#CC"+hex
     }
 }
