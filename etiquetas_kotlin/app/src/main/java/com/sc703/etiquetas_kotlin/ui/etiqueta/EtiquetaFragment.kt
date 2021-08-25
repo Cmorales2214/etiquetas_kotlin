@@ -38,6 +38,7 @@ open class EtiquetaFragment : Fragment() {
 
     private val llave_Encriptacion = "12354-*-/werfmksdfSDF23$%^&*=="
 
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val root = inflater.inflate(R.layout.fragment_etiqueta, container, false)
 
