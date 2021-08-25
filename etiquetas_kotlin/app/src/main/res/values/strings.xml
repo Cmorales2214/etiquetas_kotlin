@@ -56,7 +56,6 @@
     <string name="menu_home">Home</string>
     <string name="menu_storage">Tag Images</string>
     <string name="menu_contact">Contact</string>
-    <string name="menu_slideshow" translatable="false">Slideshow</string>
     <string name="menu_tag">Tags</string>
     <string name="menu_list">Tag List</string>
 
