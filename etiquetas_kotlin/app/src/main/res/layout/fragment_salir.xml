@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ui.salir.SalirFragment"
+    android:background="@drawable/backgr"
+    android:gravity="center"
     android:orientation="vertical"
-    android:background="@drawable/background"
-    android:gravity="center">
+    tools:context=".ui.salir.SalirFragment">
 
     <ImageView
         android:layout_width="85dp"
         android:layout_height="85dp"
-        app:srcCompat="@drawable/exit"  />
+        app:srcCompat="@drawable/exit" />
 
     <TextView
         android:layout_width="match_parent"

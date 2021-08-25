@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/backgr"
     android:gravity="center"
     android:orientation="vertical"
-    android:background="@drawable/background"
     tools:context=".MainActivity">
 
 
@@ -14,16 +13,16 @@
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:layout_gravity="center"
-        android:background="@drawable/iconop"/>
+        android:background="@drawable/iconop" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:gravity="center"
         android:fontFamily="sans-serif-black"
+        android:gravity="center"
+        android:text="@string/welcome_App"
         android:textColor="@color/black"
-        android:textSize="20sp"
-        android:text="@string/welcome_App" />
+        android:textSize="20sp" />
 
 </LinearLayout>

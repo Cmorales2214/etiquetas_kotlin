@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="match_parent"
-    android:background="@drawable/background"
+    android:background="@drawable/backgr"
     android:gravity="center_vertical"
     android:orientation="vertical"
     android:visibility="visible"
@@ -46,21 +46,21 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
+        android:fontFamily="sans-serif-black"
         android:gravity="center"
         android:onClick="olvidarContrasena"
-        android:fontFamily="sans-serif-black"
-        android:textColor="@color/black"
-        android:text="@string/ForgotPassword" />
+        android:text="@string/ForgotPassword"
+        android:textColor="@color/black" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
+        android:fontFamily="sans-serif-black"
         android:gravity="center"
         android:onClick="registro"
-        android:fontFamily="sans-serif-black"
-        android:textColor="@color/black"
-        android:text="@string/Register" />
+        android:text="@string/Register"
+        android:textColor="@color/black" />
 
     <Button
         android:id="@+id/btn_Login"

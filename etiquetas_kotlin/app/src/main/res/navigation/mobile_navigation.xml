@@ -27,13 +27,13 @@
         android:id="@+id/nav_tag"
         android:name="com.sc703.etiquetas_kotlin.ui.etiqueta.EtiquetaFragment"
         android:label="@string/menu_tag"
-        tools:layout="@layout/fragment_cotacto" />
+        tools:layout="@layout/fragment_etiqueta" />
 
     <fragment
         android:id="@+id/nav_list"
         android:name="com.sc703.etiquetas_kotlin.ui.list.ListFragment"
-        android:label="@string/menu_tag"
-        tools:layout="@layout/fragment_cotacto" />
+        android:label="@string/menu_list"
+        tools:layout="@layout/fragment_list" />
 
     <fragment
         android:id="@+id/nav_salir"
