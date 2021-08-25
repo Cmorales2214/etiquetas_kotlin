@@ -97,7 +97,11 @@
             android:id="@+id/edt_TAGemission"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/tag_emission_date_hint" />
+            android:hint="@string/tag_emission_date_hint"
+            android:clickable="true"
+            android:focusable="false"
+            android:inputType="date"/>
+
 
         <TextView
             android:layout_width="match_parent"
@@ -110,7 +114,10 @@
             android:id="@+id/edt_TAGclose"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/tag_close_date_hint" />
+            android:hint="@string/tag_close_date_hint"
+            android:clickable="true"
+            android:focusable="false"
+            android:inputType="date" />
 
     </LinearLayout>
 

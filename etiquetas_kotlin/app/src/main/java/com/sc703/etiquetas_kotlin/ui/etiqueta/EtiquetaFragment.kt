@@ -1,6 +1,8 @@
 package com.sc703.etiquetas_kotlin.ui.etiqueta
 
+import android.app.DatePickerDialog
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
 import android.util.Base64
 import androidx.fragment.app.Fragment
@@ -8,14 +10,17 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
+import androidx.annotation.RequiresApi
 import com.google.firebase.firestore.FirebaseFirestore
 import com.sc703.etiquetas_kotlin.R
+import java.lang.Exception
 import java.security.MessageDigest
+import java.time.LocalDate
 import javax.crypto.Cipher
 import javax.crypto.spec.SecretKeySpec
 
 
-class EtiquetaFragment : Fragment() {
+open class EtiquetaFragment : Fragment() {
 
     private lateinit var edt_TAGid: EditText
     private lateinit var spn_TAGcolor: Spinner
@@ -31,8 +36,7 @@ class EtiquetaFragment : Fragment() {
     private lateinit var btn_TAGEditar: Button
     private lateinit var btn_TAGLimpiar: Button
 
-    private val llave_Encriptacion =
-        "12354-*-/werfmksdfSDF23$%^&*=="
+    private val llave_Encriptacion = "12354-*-/werfmksdfSDF23$%^&*=="
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val root = inflater.inflate(R.layout.fragment_etiqueta, container, false)
@@ -49,6 +53,9 @@ class EtiquetaFragment : Fragment() {
         btn_TAGEliminar = root.findViewById(R.id.btn_TAGEliminar)
         btn_TAGEditar = root.findViewById(R.id.btn_TAGEditar)
         btn_TAGLimpiar = root.findViewById(R.id.btn_TAGLimpiar)
+
+        edt_TAGemission.setOnClickListener { showDatePickerDialog(edt_TAGemission) }
+        edt_TAGclose.setOnClickListener { showDatePickerDialog(edt_TAGclose) }
 
         btn_TAGAgregar.setOnClickListener(View.OnClickListener { v -> AgregarTag(v) })
         btn_TAGEditar.setOnClickListener(View.OnClickListener { v -> EditarTag(v) })
@@ -84,17 +91,21 @@ class EtiquetaFragment : Fragment() {
             "emision" to Encriptar(edt_TAGemission.text.toString(), llave_Encriptacion),
             "cierre" to Encriptar(edt_TAGclose.text.toString(), llave_Encriptacion)
         )
-
-        db.collection("etiquetas").document(Encriptar(edt_TAGid.text.toString(), llave_Encriptacion)).set(dato)
-            .addOnSuccessListener { _ ->
-                Toast.makeText(context, R.string.tag_add, Toast.LENGTH_SHORT).show()
-                LimpiarTag(view)
-            }
-            .addOnFailureListener { _ ->
-                Toast.makeText(context, R.string.tag_fail, Toast.LENGTH_SHORT).show()
-                LimpiarTag(view)
-                LimpiarTag(view)
-            }
+        try {
+            db.collection("etiquetas")
+                .document(Encriptar(edt_TAGid.text.toString(), llave_Encriptacion)).set(dato)
+                .addOnSuccessListener { _ ->
+                    Toast.makeText(context, R.string.tag_add, Toast.LENGTH_SHORT).show()
+                    LimpiarTag(view)
+                }
+                .addOnFailureListener { _ ->
+                    Toast.makeText(context, R.string.tag_fail, Toast.LENGTH_SHORT).show()
+                    LimpiarTag(view)
+                }
+        } catch(e : Exception) {
+            Toast.makeText(context, R.string.tag_fail, Toast.LENGTH_SHORT).show()
+            LimpiarTag(view)
+        }
     }
 
     private fun EditarTag(view: View){
@@ -109,74 +120,88 @@ class EtiquetaFragment : Fragment() {
             "cierre" to Encriptar(edt_TAGclose.text.toString(), llave_Encriptacion)
         )
 
-        db.collection("etiquetas").document(Encriptar(edt_TAGid.text.toString(), llave_Encriptacion)).get()
-            .addOnSuccessListener { documento ->
-                if (documento.exists()) {
-                    db.collection("etiquetas").document(Encriptar(edt_TAGid.text.toString(), llave_Encriptacion)).set(dato)
-                        .addOnSuccessListener { _ ->
-                            Toast.makeText(context, R.string.tag_add, Toast.LENGTH_SHORT).show()
-                            LimpiarTag(view)
-                        }
-                        .addOnFailureListener { _ ->
-                            Toast.makeText(context, R.string.tag_fail, Toast.LENGTH_SHORT).show()
-                            LimpiarTag(view)
-                        }
-                }else{
-                    Toast.makeText(context, R.string.tag_not_found, Toast.LENGTH_SHORT).show()
+        try {
+            db.collection("etiquetas").document(Encriptar(edt_TAGid.text.toString(), llave_Encriptacion)).get()
+                .addOnSuccessListener { documento ->
+                    if (documento.exists()) {
+                        db.collection("etiquetas").document(Encriptar(edt_TAGid.text.toString(), llave_Encriptacion)).set(dato)
+                            .addOnSuccessListener { _ ->
+                                Toast.makeText(context, R.string.tag_add, Toast.LENGTH_SHORT).show()
+                                LimpiarTag(view)
+                            }
+                            .addOnFailureListener { _ ->
+                                Toast.makeText(context, R.string.tag_fail, Toast.LENGTH_SHORT).show()
+                                LimpiarTag(view)
+                            }
+                    }else{
+                        Toast.makeText(context, R.string.tag_not_found, Toast.LENGTH_SHORT).show()
+                    }
                 }
-            }
+        } catch(e : Exception) {
+            Toast.makeText(context, R.string.tag_fail, Toast.LENGTH_SHORT).show()
+            LimpiarTag(view)
+        }
     }
 
     private fun EliminarTag(view: View){
         val db: FirebaseFirestore = FirebaseFirestore.getInstance()
 
         if (edt_TAGid.text.isNotBlank()) {
-            db.collection("etiquetas")
-                .document(Encriptar(edt_TAGid.text.toString(), llave_Encriptacion))
-                .delete()
-                .addOnSuccessListener { _ ->Toast.makeText(context, R.string.tag_remove, Toast.LENGTH_SHORT).show()
-                    LimpiarTag(view)
-                }
-                .addOnFailureListener { _ -> Toast.makeText(context, R.string.tag_fail, Toast.LENGTH_SHORT).show()
-                    LimpiarTag(view)
-                }
+            try {
+                db.collection("etiquetas")
+                    .document(Encriptar(edt_TAGid.text.toString(), llave_Encriptacion))
+                    .delete()
+                    .addOnSuccessListener { _ ->Toast.makeText(context, R.string.tag_remove, Toast.LENGTH_SHORT).show()
+                        LimpiarTag(view)
+                    }
+                    .addOnFailureListener { _ -> Toast.makeText(context, R.string.tag_fail, Toast.LENGTH_SHORT).show()
+                        LimpiarTag(view)
+                    }
+            } catch(e : Exception) {
+                Toast.makeText(context, R.string.tag_fail, Toast.LENGTH_SHORT).show()
+                LimpiarTag(view)
+            }
         }
     }
 
     private fun BuscarTag(view: View){
         val db: FirebaseFirestore = FirebaseFirestore.getInstance()
-
-        db.collection("etiquetas").document(Encriptar(edt_TAGid.text.toString(), llave_Encriptacion)).get()
-            .addOnSuccessListener { documento ->
-                if(documento.exists()){
-                    val color:String? = Desencriptar(documento.getString("color").toString(), llave_Encriptacion)
-                    val operador:String? = Desencriptar(documento.getString("nombre").toString(), llave_Encriptacion)
-                    val lineaproducc:String? = Desencriptar(documento.getString("linea").toString(), llave_Encriptacion)
-                    val descripcion:String? = Desencriptar(documento.getString("descripcion").toString(), llave_Encriptacion)
-                    val emission:String? = Desencriptar(documento.getString("emision").toString(), llave_Encriptacion)
-                    val dateclose:String? = Desencriptar(documento.getString("cierre").toString(), llave_Encriptacion)
-                    var i = 0
-                    spn_TAGcolor.setSelection(0)
-                    selected_color = resources.getStringArray(R.array.tag_colors)[0].toString()
-                    resources.getStringArray(R.array.tag_colors).forEach {
-                        if (resources.getStringArray(R.array.tag_colors)[i].toString() == color.toString()) {
-                            spn_TAGcolor.setSelection(i)
-                            selected_color = resources.getStringArray(R.array.tag_colors)[i].toString()
+        try {
+            db.collection("etiquetas").document(Encriptar(edt_TAGid.text.toString(), llave_Encriptacion)).get()
+                .addOnSuccessListener { documento ->
+                    if(documento.exists()){
+                        val color:String? = Desencriptar(documento.getString("color").toString(), llave_Encriptacion)
+                        val operador:String? = Desencriptar(documento.getString("nombre").toString(), llave_Encriptacion)
+                        val lineaproducc:String? = Desencriptar(documento.getString("linea").toString(), llave_Encriptacion)
+                        val descripcion:String? = Desencriptar(documento.getString("descripcion").toString(), llave_Encriptacion)
+                        val emission:String? = Desencriptar(documento.getString("emision").toString(), llave_Encriptacion)
+                        val dateclose:String? = Desencriptar(documento.getString("cierre").toString(), llave_Encriptacion)
+                        var i = 0
+                        spn_TAGcolor.setSelection(0)
+                        selected_color = resources.getStringArray(R.array.tag_colors)[0].toString()
+                        resources.getStringArray(R.array.tag_colors).forEach {
+                            if (resources.getStringArray(R.array.tag_colors)[i].toString() == color.toString()) {
+                                spn_TAGcolor.setSelection(i)
+                                selected_color = resources.getStringArray(R.array.tag_colors)[i].toString()
+                            }
+                            i++
                         }
-                        i++
+                        edt_TAGoperator.setText(operador)
+                        edt_TAGline.setText(lineaproducc)
+                        edt_TAGdescription.setText(descripcion)
+                        edt_TAGemission.setText(emission)
+                        edt_TAGclose.setText(dateclose)
+                    }else{
+                        Toast.makeText(context, R.string.tag_not_found, Toast.LENGTH_SHORT).show()
                     }
-                    edt_TAGoperator.setText(operador)
-                    edt_TAGline.setText(lineaproducc)
-                    edt_TAGdescription.setText(descripcion)
-                    edt_TAGemission.setText(emission)
-                    edt_TAGclose.setText(dateclose)
-                }else{
-                    Toast.makeText(context, R.string.tag_not_found, Toast.LENGTH_SHORT).show()
                 }
-            }
-            .addOnFailureListener { _ -> Toast.makeText(context, R.string.tag_fail, Toast.LENGTH_SHORT).show()
-                LimpiarTag(view)
-            }
+                .addOnFailureListener { _ -> Toast.makeText(context, R.string.tag_fail, Toast.LENGTH_SHORT).show()
+                    LimpiarTag(view)
+                }
+        } catch(e : Exception) {
+            Toast.makeText(context, R.string.tag_fail, Toast.LENGTH_SHORT).show()
+            LimpiarTag(view)
+        }
     }
 
     private fun LimpiarTag(view: View){
@@ -212,6 +237,21 @@ class EtiquetaFragment : Fragment() {
         val datosdecodificados = Base64.decode(txt_Desencriptar, Base64.DEFAULT)
         val datosBytes = cipher.doFinal(datosdecodificados)
         return String(datosBytes)
+    }
+
+    @RequiresApi(Build.VERSION_CODES.O)
+    private fun showDatePickerDialog(edt : EditText) {
+        val datePicker = DatePickerFragment { day, month, year ->
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                onDateSelected(day, month, year, edt)
+            }
+        }
+        datePicker.show(parentFragmentManager, "datePicker")
+    }
+
+    @RequiresApi(Build.VERSION_CODES.O)
+    private fun onDateSelected(day: Int, month: Int, year: Int, edt : EditText) {
+        edt.setText(LocalDate.of(year,month,day).toString())
     }
 
 }
