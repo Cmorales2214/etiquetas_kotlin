@@ -36,6 +36,12 @@
         tools:layout="@layout/fragment_cotacto" />
 
     <fragment
+        android:id="@+id/nav_list"
+        android:name="com.sc703.etiquetas_kotlin.ui.list.ListFragment"
+        android:label="@string/menu_tag"
+        tools:layout="@layout/fragment_cotacto" />
+
+    <fragment
         android:id="@+id/nav_salir"
         android:name="com.sc703.etiquetas_kotlin.ui.salir.SalirFragment"
         android:label="@string/nav_salir"

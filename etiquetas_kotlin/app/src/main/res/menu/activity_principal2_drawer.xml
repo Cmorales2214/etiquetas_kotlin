@@ -27,6 +27,11 @@
             android:title="@string/menu_tag" />
 
         <item
+            android:id="@+id/nav_list"
+            android:icon="@drawable/ic_menu_recyclerview"
+            android:title="@string/menu_list" />
+
+        <item
             android:id="@+id/nav_salir"
             android:icon="@drawable/ic_salir"
             android:title="@string/nav_salir" />

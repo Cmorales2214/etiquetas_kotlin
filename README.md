@@ -24,11 +24,11 @@ Nuestro modelo de negocio será "Gratuito" ya que será una aplicación hecha a 
 Temas
 [Y] Autenticación
 [Y] Fragmentos, íconos y Firebase Realtime
-[?] Firebase Storage
-[?] Almacenado de datos (SQLite)
+[Y] Firebase Storage
+[Y] Almacenado de datos (SQLite)
 [Y] Recycled View
-[?] Interacción entre apps
-[?] Servicios Web
-[?] Encriptación
+[N] Interacción entre apps
+[N] Servicios Web
+[Y] Encriptación
 [Y] Internacionalización
-[N] Monetización
+[Y] Monetización

@@ -11,7 +11,8 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Etiquetas_kotlin">
+        android:theme="@style/Theme.Etiquetas_kotlin"
+        android:usesCleartextTraffic="true">
         <!--Esto esta dando error, SalirActivity no existe, no sé si alguno lo dejó con algún propósito-->
         <!--<activity android:name=".ui.salir.SalirActivity"></activity>-->
         <activity android:name=".RegistrarActivity" />
