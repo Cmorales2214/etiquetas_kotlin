@@ -12,7 +12,6 @@ import com.google.firebase.auth.FirebaseUser
 
 class MainActivity : AppCompatActivity() {
 
-
     private val  Codigo_Solicitud = 1234
     // Intanciamos el autententicador
     private lateinit var auth: FirebaseAuth
@@ -28,7 +27,7 @@ override fun onCreate(savedInstanceState: Bundle?) {
     override fun onStart() {
         super.onStart()
         val User = auth.currentUser
-        Toast.makeText(applicationContext, R.string.toast_login_successful, Toast.LENGTH_SHORT).show()
+        Toast.makeText(applicationContext, R.string.login_successful, Toast.LENGTH_SHORT).show()
         ActualizarInterfaz(User)
     }
 

@@ -63,7 +63,7 @@
     <string name="close_session_click">Presione el botón de abajo para cerrar sesión</string>
     <string name="toast_email_sent">Correo enviado</string>
     <string name="toast_wrong">Ocurrió algún error</string>
-    <string name="toast_login_successful">Inicio de sesión exitoso</string>
+    <string name="login_successful">Inicio de sesión exitoso</string>
     <string name="close_session_log_out">Desconectando</string>
     <string name="welcome_App">Bienvenido al app</string>
     <string name="Contact_email_subject">Retroalimentación</string>
@@ -77,4 +77,6 @@
     <string name="navigation_drawer_close">Cerrar cajón de navegación</string>
     <string name="nav_header_desc">Cabecera de navegación</string>
     <string name="nav_contacts">Contacto</string>
+    <string name="tag_incomplete_data">Por favor complete todos los campos</string>
+    <string name="tag_invalid_date">La fecha de cierre no puede ser más antigua que la fecha de emisión</string>
 </resources>

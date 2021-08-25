@@ -21,6 +21,7 @@
     <string name="ForgotPassword">Forgot your password?</string>
     <string name="Password_hint">Enter your password</string>
     <string name="Register">Register</string>
+    <string name="login_successful">Login successful</string>
 
     <!-- Register -->
     <string name="Name">Name</string>
@@ -79,6 +80,8 @@
     <string name="tag_success">Success</string>
     <string name="tag_remove">Information deleted</string>
     <string name="tag_not_found">Information not found</string>
+    <string name="tag_incomplete_data">Please complete all fields</string>
+    <string name="tag_invalid_date">Close date can\'t be older than emission date</string>
     <string-array name="TAG_spinner_options">
         <item>Red (report a flaw)</item>
         <item>Blue (quality assurance)</item>
@@ -108,7 +111,6 @@
     <!-- Toast messages -->
     <string name="toast_email_sent">Email sent</string>
     <string name="toast_wrong">Something went wrong</string>
-    <string name="toast_login_successful">Login successful</string>
 
     <!-- Home -->
     <string name="home_title">Welcome to Tag Management App!</string>
