@@ -17,9 +17,9 @@
         android:label="@string/menu_storage"
         tools:layout="@layout/fragment_storage" />
 
-    <fragment
+        <fragment
         android:id="@+id/nav_slideshow"
-        android:name="com.sc703.etiquetas_kotlin.ui.slideshow.SlideshowFragment"
+            android:name="com.sc703.etiquetas_kotlin.ui.slideshow.SlideshowFragment"
         android:label="@string/menu_slideshow"
         tools:layout="@layout/fragment_slideshow" />
 
