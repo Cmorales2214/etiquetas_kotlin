@@ -69,4 +69,6 @@
     <string name="Contact_number">888888888</string>
     <string name="Contact_email_subject">Retroalimentacion</string>
     <string name="Contact_email_message">Hola! Tengo un reporte.</string>
+    <string name="tag_success">Éxito</string>
+    <string name="menu_list">Lista de etiquetas</string>
 </resources>

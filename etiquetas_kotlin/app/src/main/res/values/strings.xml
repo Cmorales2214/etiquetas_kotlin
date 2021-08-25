@@ -77,7 +77,7 @@
     <string name="tag_close_date_hint">Write close date</string>
     <string name="tag_add">Added information</string>
     <string name="tag_fail">Operation failed</string>
-    <string name="tag_success">Disconnecting</string>
+    <string name="tag_success">Success</string>
     <string name="tag_remove">Information deleted</string>
     <string name="tag_not_found">Information not found</string>
     <string-array name="TAG_spinner_options">
