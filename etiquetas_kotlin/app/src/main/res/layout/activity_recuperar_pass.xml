@@ -4,9 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center_vertical"
-    android:orientation="vertical"
+    android:layout_margin="10dp"
     android:background="@drawable/backgr"
+    android:gravity="center|center_vertical"
+    android:orientation="vertical"
     tools:context=".RecuperarPassActivity">
 
     <ProgressBar
@@ -26,23 +27,22 @@
         android:inputType="textPersonName" />
 
     <Button
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_margin="10dp"
         android:background="@color/design_default_color_primary"
         android:onClick="enviar"
         android:text="@string/btn_SendPassword"
         android:textColor="@android:color/white" />
 
-    <com.google.android.gms.ads.AdView
-        android:layout_marginTop="35dp"
-        xmlns:ads="http://schemas.android.com/apk/res-auto"
+    <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
         android:id="@+id/av_banner"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="35dp"
         ads:adSize="SMART_BANNER"
-        ads:adUnitId="ca-app-pub-3940256099942544/6300978111">
-    </com.google.android.gms.ads.AdView>
+        ads:adUnitId="ca-app-pub-3940256099942544/6300978111"></com.google.android.gms.ads.AdView>
 
 </LinearLayout>

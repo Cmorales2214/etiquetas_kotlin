@@ -27,7 +27,7 @@ class SalirFragment : Fragment() {
         btn_salir.setOnClickListener(View.OnClickListener {
             //Cerramos la conexion con Firebase
             FirebaseAuth.getInstance().signOut()
-            Toast.makeText(context,R.string.toast_log_out, Toast.LENGTH_SHORT).show()
+            Toast.makeText(context,R.string.close_session_log_out, Toast.LENGTH_SHORT).show()
             val intent = Intent(activity, LoginActivity::class.java)
             startActivity(intent)
         })

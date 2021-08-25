@@ -29,7 +29,7 @@ class CotactoFragment : Fragment() {
 
         btn_Email.setOnClickListener(View.OnClickListener {
             Correo(
-                R.string.email.toString(),
+                R.string.Contact_email.toString(),
                 R.string.Contact_email_subject.toString(),
                 R.string.Contact_email_message.toString()
             )

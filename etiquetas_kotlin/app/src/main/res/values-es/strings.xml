@@ -64,7 +64,7 @@
     <string name="toast_email_sent">Correo enviado</string>
     <string name="toast_wrong">Ocurrió algún error</string>
     <string name="toast_login_successful">Inicio de sesión exitoso</string>
-    <string name="toast_log_out">Desconectando</string>
+    <string name="close_session_log_out">Desconectando</string>
     <string name="welcome_App">Bienvenido al app</string>
     <string name="Contact_email_subject">Retroalimentación</string>
     <string name="Contact_email_message">¡Hola! Tengo un reporte.</string>

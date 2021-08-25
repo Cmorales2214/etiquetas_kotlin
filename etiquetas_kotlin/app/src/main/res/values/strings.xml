@@ -10,6 +10,7 @@
     <string name="nav_contacts">Contact</string>
     <string name="nav_close_session">Close session</string>
     <string name="action_settings">Settings</string>
+    <string name="welcome_App">Welcome to app</string>
 
     <!-- Login -->
     <string name="ID">ID:</string>
@@ -33,7 +34,7 @@
     <string name="Contact_number" translatable="false">88888888</string>
     <string name="Contact_email_subject">Feedback</string>
     <string name="Contact_email_message">Hello! I have feedback to report.</string>
-    <string name="email" translatable="false">proyectofidelitas09@gmail.com</string>
+    <string name="Contact_email" translatable="false">proyectofidelitas09@gmail.com</string>
 
     <!-- Buttons -->
     <string name="btn_register">Register</string>
@@ -102,13 +103,12 @@
 
     <!-- Close session -->
     <string name="close_session_click">Click the button below to close the current session</string>
+    <string name="close_session_log_out">Disconnecting</string>
 
     <!-- Toast messages -->
     <string name="toast_email_sent">Email sent</string>
     <string name="toast_wrong">Something went wrong</string>
     <string name="toast_login_successful">Login successful</string>
-    <string name="toast_log_out">Disconnecting</string>
-    <string name="welcome_App">Welcome to app</string>
 
     <!-- Home -->
     <string name="home_title">Welcome to Tag Management App!</string>

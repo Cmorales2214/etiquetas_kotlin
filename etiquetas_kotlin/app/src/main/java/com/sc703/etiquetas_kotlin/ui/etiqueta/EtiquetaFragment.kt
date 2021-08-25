@@ -255,4 +255,11 @@ open class EtiquetaFragment : Fragment() {
         edt.setText(LocalDate.of(year,month,day).toString())
     }
 
+    private fun CamposLlenos() : Boolean {
+        if(edt_TAGid.text.toString() != "" && edt_TAGoperator.text.toString() != "" &&
+        edt_TAGline.text.toString() != "" && edt_TAGdescription.text.toString() != "" &&
+        edt_TAGemission.text.toString() != "" && edt_TAGclose.text.toString() != ""){ return true }
+        return false
+    }
+
 }
