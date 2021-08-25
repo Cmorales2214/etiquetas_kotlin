@@ -1,16 +1,15 @@
 <resources>
     <!-- General -->
-    <string name="app_name" translatable="false">Tags</string>
-    <string name="title_activity_principal" translatable="false">ActivityPrincipal</string>
-    <string name="navigation_drawer_open" translatable="false">Open navigation drawer</string>
-    <string name="navigation_drawer_close" translatable="false">Close navigation drawer</string>
-    <string name="nav_header_title" translatable="false">Tags</string>
+    <string name="app_name" translatable="false">Tag Management App</string>
+    <string name="nav_header_title" translatable="false">Tag Management App</string>
     <string name="nav_header_subtitle" translatable="false">proyectofidelitas09@gmail.com</string>
-    <string name="nav_header_desc" translatable="false">Navigation header</string>
-    <string name="action_settings" translatable="false">Settings</string>
-    <string name="nav_contacts" translatable="false">Contacts</string>
-    <string name="nav_salir">Close session</string>
-    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
+    <string name="title_activity_principal" translatable="false">ActivityPrincipal</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="nav_contacts">Contact</string>
+    <string name="nav_close_session">Close session</string>
+    <string name="action_settings">Settings</string>
 
     <!-- Login -->
     <string name="ID">ID:</string>
@@ -31,7 +30,7 @@
     <string name="Contact">Contact:</string>
     <string name="Contact_label">Do you have any problems? Do you have any questions? Please let us know!</string>
     <string name="Contact_no_app">No apps where found to send the email</string>
-    <string name="Contact_number">88888888</string>
+    <string name="Contact_number" translatable="false">88888888</string>
     <string name="Contact_email_subject">Feedback</string>
     <string name="Contact_email_message">Hello! I have feedback to report.</string>
     <string name="email" translatable="false">proyectofidelitas09@gmail.com</string>
@@ -110,4 +109,8 @@
     <string name="toast_login_successful">Login successful</string>
     <string name="toast_log_out">Disconnecting</string>
     <string name="welcome_App">Welcome to app</string>
+
+    <!-- Home -->
+    <string name="home_title">Welcome to Tag Management App!</string>
+    <string name="home_paragraph">Tag Management App is an application for the administration of faults, quality assurance and improvements.</string>
 </resources>
