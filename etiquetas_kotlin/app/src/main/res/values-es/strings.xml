@@ -79,4 +79,15 @@
     <string name="nav_contacts">Contacto</string>
     <string name="tag_incomplete_data">Por favor complete todos los campos</string>
     <string name="tag_invalid_date">La fecha de cierre no puede ser más antigua que la fecha de emisión</string>
+
+    <string-array name="TAG_spinner_options">
+        <item>Rojo (reportar un defecto)</item>
+        <item>Azul (seguro de calidad)</item>
+        <item>Verde (mejora)</item>
+    </string-array>
+    <string-array name="tag_colors">
+        <item>Red</item>
+        <item>Blue</item>
+        <item>Green</item>
+    </string-array>
 </resources>
