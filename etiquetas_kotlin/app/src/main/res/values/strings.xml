@@ -87,7 +87,7 @@
         <item>Blue (quality assurance)</item>
         <item>Green (improvement)</item>
     </string-array>
-    <string-array name="tag_colors">
+    <string-array name="tag_colors" translatable="false">
         <item>Red</item>
         <item>Blue</item>
         <item>Green</item>

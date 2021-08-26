@@ -85,9 +85,4 @@
         <item>Azul (seguro de calidad)</item>
         <item>Verde (mejora)</item>
     </string-array>
-    <string-array name="tag_colors">
-        <item>Red</item>
-        <item>Blue</item>
-        <item>Green</item>
-    </string-array>
 </resources>
