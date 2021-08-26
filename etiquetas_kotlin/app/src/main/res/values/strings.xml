@@ -32,7 +32,7 @@
     <string name="Contact">Contact:</string>
     <string name="Contact_label">Do you have any problems? Do you have any questions? Please let us know!</string>
     <string name="Contact_no_app">No apps where found to send the email</string>
-    <string name="Contact_number" translatable="false">88888888</string>
+    <string name="Contact_number" translatable="false">50688888888</string>
     <string name="Contact_email_subject">Feedback</string>
     <string name="Contact_email_message">Hello! I have feedback to report.</string>
     <string name="Contact_email" translatable="false">proyectofidelitas09@gmail.com</string>

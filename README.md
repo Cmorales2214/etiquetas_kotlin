@@ -25,10 +25,11 @@ Temas
 [Y] Autenticación
 [Y] Fragmentos, íconos y Firebase Realtime
 [Y] Firebase Storage
-[Y] Almacenado de datos (SQLite)
 [Y] Recycled View
-[N] Interacción entre apps
-[N] Servicios Web
 [Y] Encriptación
 [Y] Internacionalización
 [Y] Monetización
+
+[N] Almacenado de datos (SQLite)
+[N] Interacción entre apps
+[N] Servicios Web

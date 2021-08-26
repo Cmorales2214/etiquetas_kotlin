@@ -24,14 +24,14 @@ class CotactoFragment : Fragment() {
         btn_Email = root.findViewById(R.id.btn_Correo)
 
         btn_Llamar.setOnClickListener(View.OnClickListener {
-            Llamar("tel:" + "88888888")
+            Llamar("tel:" + getString(R.string.Contact_number))
         })
 
         btn_Email.setOnClickListener(View.OnClickListener {
             Correo(
-                R.string.Contact_email.toString(),
-                R.string.Contact_email_subject.toString(),
-                R.string.Contact_email_message.toString()
+                getString(R.string.Contact_email),
+                getString(R.string.Contact_email_subject),
+                getString(R.string.Contact_email_message)
             )
         })
 
