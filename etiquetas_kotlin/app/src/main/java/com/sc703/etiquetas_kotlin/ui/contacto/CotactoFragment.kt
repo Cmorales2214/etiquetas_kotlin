@@ -24,7 +24,7 @@ class CotactoFragment : Fragment() {
         btn_Email = root.findViewById(R.id.btn_Correo)
 
         btn_Llamar.setOnClickListener(View.OnClickListener {
-            Llamar("tel:" + R.string.Contact_number.toString())
+            Llamar("tel:" + "88888888")
         })
 
         btn_Email.setOnClickListener(View.OnClickListener {
