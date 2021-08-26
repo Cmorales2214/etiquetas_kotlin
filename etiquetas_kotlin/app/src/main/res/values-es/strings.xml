@@ -16,7 +16,7 @@
     <string name="Contact_label">¿Tienes algún problema?¿Tienes alguna preguna? Dejano saber.</string>
     <string name="Contact_no_app">No se encontro app para enviar email.</string>
     <string name="btn_register">Registro</string>
-    <string name="btn_login">Incio sesión</string>
+    <string name="btn_login">Iniciar sesión</string>
     <string name="btn_call">Llamar</string>
     <string name="btn_send_email">Enviar email</string>
     <string name="btn_edit">Editar</string>
